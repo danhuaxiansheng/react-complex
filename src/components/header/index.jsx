@@ -25,11 +25,11 @@ export default function Page() {
         蛋花网
       </div>
       <div className="header-menu">
-        <a href="#" className="active">
+        <a href="/" className="active">
           工具库
         </a>
-        <a href="#">项目集</a>
-        <a href="#">组件库</a>
+        <a href="/">项目集</a>
+        <a href="/">组件库</a>
       </div>
       <div className="user-settings">
         <div className="dark-light">
