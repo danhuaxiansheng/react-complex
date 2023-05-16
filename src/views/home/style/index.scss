@@ -78,13 +78,7 @@ body {
     color: var(--body-color);
     border-color: var(--body-color);
   }
-  .search-location,
-  .search-job,
-  .search-salary {
-    svg {
-      color: var(--body-color);
-    }
-  }
+
   .detail-button {
     background-color: var(--inactive-color);
     color: var(--subtitle-color);
@@ -94,7 +88,7 @@ body {
 .job {
   display: flex;
   flex-direction: column;
-  max-width: 1400px;
+  // max-width: 1400px;
   height: 100vh;
   margin: 0 auto;
   overflow: hidden;
@@ -219,31 +213,6 @@ body {
   }
 }
 
-.search-location,
-.search-job,
-.search-salary {
-  display: flex;
-  align-items: center;
-  width: 50%;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 0 25px;
-  height: 100%;
-  input {
-    width: 100%;
-    height: 100%;
-    display: block;
-    background-color: transparent;
-    border: none;
-  }
-  svg {
-    margin-right: 8px;
-    width: 18px;
-    color: var(--active-color);
-    flex-shrink: 0;
-  }
-}
-
 .search-button {
   background-color: var(--active-color);
   height: 55px;
@@ -291,32 +260,6 @@ body {
   flex-shrink: 0;
 }
 
-.alert {
-  background-color: var(--alert-bg-color);
-  padding: 24px 18px;
-  border-radius: 8px;
-  &-title {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 8px;
-  }
-  &-subtitle {
-    font-size: 13px;
-    color: var(--subtitle-color);
-    line-height: 1.6em;
-    margin-bottom: 20px;
-  }
-  input {
-    width: 100%;
-    padding: 10px;
-    display: block;
-    border-radius: 6px;
-    background-color: var(--header-bg-color);
-    border: none;
-    font-size: 13px;
-  }
-}
-
 .search-buttons {
   border: none;
   color: var(--button-color);
@@ -340,7 +283,7 @@ body {
   }
 }
 
-.type-container {
+.checkbox-group {
   display: flex;
   align-items: center;
   color: var(--subtitle-color);
@@ -870,10 +813,6 @@ body {
 }
 
 @media screen and (max-width: 930px) {
-  .search-job,
-  .search-salary {
-    display: none;
-  }
   .search-bar {
     width: auto;
   }
