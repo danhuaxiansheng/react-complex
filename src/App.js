@@ -1,27 +1,35 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/header/index";
+import { ConfigProvider, theme } from "antd";
 
+import Header from "./components/header/index";
 import ToolsPage from "./views/tools/index";
 import ProjectPage from "./views/project/index";
 
+import "./App.scss";
+import "antd/dist/reset.css";
+
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <main>
-        <Routes>
-          <Route path="/" element={<ToolsPage />} />
-          <Route path="/project" element={<ProjectPage />} />
-          <Route path="/components" element={<About />} />
-        </Routes>
-      </main>
-    </div>
+    <ConfigProvider
+      theme={{
+        token: {
+          // colorPrimary: "#00b96b",
+          algorithm: theme.darkAlgorithm,
+        },
+      }}
+    >
+      <div className="App">
+        <Header></Header>
+        <main>
+          <Routes>
+            <Route path="/" element={<ToolsPage />} />
+            <Route path="/project" element={<ProjectPage />} />
+            <Route path="/components" element={<ProjectPage />} />
+          </Routes>
+        </main>
+      </div>
+    </ConfigProvider>
   );
-}
-
-function About() {
-  return <div>这是About</div>;
 }
 
 export default App;

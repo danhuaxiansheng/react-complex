@@ -11,9 +11,9 @@ export default function Page() {
           <LeftSearch></LeftSearch>
           <div className="searched-jobs">
             <div className="searched-bar">
-              <div className="searched-show">Showing 46 Jobs</div>
+              <div className="searched-show">共 46 条结果</div>
               <div className="searched-sort">
-                Sort by: <span className="post-time">Newest Post </span>
+                排序: <span className="post-time">最新发布</span>
                 <span className="menu-icon">▼</span>
               </div>
             </div>

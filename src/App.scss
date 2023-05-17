@@ -36,6 +36,25 @@
   --search-border-color: #26262f;
 }
 
+.dark-mode {
+  .dark-light svg {
+    fill: #ffce45;
+    stroke: #ffce45;
+  }
+  .job-card svg {
+    box-shadow: none;
+  }
+  .search.item {
+    color: var(--body-color);
+    border-color: var(--body-color);
+  }
+
+  .detail-button {
+    background-color: var(--inactive-color);
+    color: var(--subtitle-color);
+  }
+}
+
 ::placeholder {
   color: var(--placeholder-color);
 }
