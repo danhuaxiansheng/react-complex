@@ -1,3 +1,6 @@
+import "./style/index.scss";
+import { NavLink } from "react-router-dom";
+
 export default function Page() {
   return (
     <div className="header">
@@ -25,11 +28,11 @@ export default function Page() {
         蛋花网
       </div>
       <div className="header-menu">
-        <a href="/" className="active">
+        <NavLink to="/" className="active" end>
           工具库
-        </a>
-        <a href="/">项目集</a>
-        <a href="/">组件库</a>
+        </NavLink>
+        <NavLink to="/project">项目集</NavLink>
+        <NavLink to="/components">组件库</NavLink>
       </div>
       <div className="user-settings">
         <div className="dark-light">

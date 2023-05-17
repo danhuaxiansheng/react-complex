@@ -1,12 +1,10 @@
 import "./style/index.scss";
-import Header from "../../components/header/index";
 import SearchBar from "../../components/searchBar/index";
 import LeftSearch from "../../components/leftSearch/index";
 
 export default function Page() {
   return (
     <div className="job">
-      <Header></Header>
       <div className="wrapper">
         <SearchBar></SearchBar>
         <div className="main-container">
