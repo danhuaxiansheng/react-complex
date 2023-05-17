@@ -2,6 +2,8 @@ import { useId } from "react";
 
 import SearchBlock from "../searchBlock/index";
 
+import "./style/index.scss";
+
 export default function Page() {
   const list = [
     {

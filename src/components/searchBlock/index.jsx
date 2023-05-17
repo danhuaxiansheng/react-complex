@@ -1,5 +1,7 @@
 import CheckboxGroup from "../checkboxGroup/index";
 
+import "./style/index.scss";
+
 export default function Page({ title, list }) {
   return (
     <div className="job-time">

@@ -1,5 +1,7 @@
 import Checkbox from "../checkbox/index";
 
+import "./style/index.scss";
+
 export default function CheckboxGroup({ list }) {
   return (
     <>

@@ -89,19 +89,6 @@
   padding-top: 30px;
 }
 
-.search-type {
-  width: 270px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  flex-shrink: 0;
-}
-.search-header {
-  text-align: left;
-  font-size: 16px;
-  font-weight: 600;
-}
-
 .search-buttons {
   border: none;
   color: var(--button-color);
@@ -111,51 +98,6 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 14px;
-}
-
-.job-wrapper {
-  padding-top: 20px;
-}
-
-.job-time {
-  padding-top: 20px;
-  &-title {
-    font-size: 14px;
-    font-weight: 500;
-  }
-}
-
-.job-time-title {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgb(101, 109, 118);
-  text-align: left;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  color: var(--subtitle-color);
-  font-size: 13px;
-  label {
-    margin-left: 2px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  & + & {
-    margin-top: 10px;
-  }
-}
-
-.job-number {
-  margin-left: auto;
-  background-color: var(--inactive-color);
-  color: var(--subtitle-color);
-  font-size: 10px;
-  font-weight: 500;
-  padding: 5px;
-  border-radius: 4px;
 }
 
 .job-style {
