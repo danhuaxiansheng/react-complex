@@ -6,7 +6,7 @@ export default function Page({ children }) {
   return (
     <div className="job">
       <div className="wrapper">
-        <SearchBar></SearchBar>
+        {/* <SearchBar></SearchBar> */}
         <div className="main-container">{children}</div>
       </div>
     </div>
