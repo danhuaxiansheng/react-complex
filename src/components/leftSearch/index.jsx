@@ -32,15 +32,32 @@ export default function Page() {
       id: useId(),
       className: "job-style",
     },
+  ];
+
+  const list2 = [
     {
-      label: "zip",
+      label: "pdf",
       checked: true,
       count: 34,
       id: useId(),
       className: "job-style",
     },
     {
-      label: "工具6",
+      label: "png",
+      checked: true,
+      count: 34,
+      id: useId(),
+      className: "job-style",
+    },
+    {
+      label: "gif",
+      checked: true,
+      count: 34,
+      id: useId(),
+      className: "job-style",
+    },
+    {
+      label: "text",
       checked: true,
       count: 34,
       id: useId(),
@@ -52,7 +69,7 @@ export default function Page() {
     <div className="search-type">
       <div className="search-header">过滤 </div>
       <SearchBlock title="办公工具" list={list}></SearchBlock>
-      <SearchBlock title="工具类型" list={list}></SearchBlock>
+      <SearchBlock title="文件类型" list={list2}></SearchBlock>
     </div>
   );
 }
