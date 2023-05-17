@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 
+import "antd/dist/reset.css";
+import "./App.scss";
+
 import Header from "./components/header/index";
 import ToolsPage from "./views/tools/index";
 import ProjectPage from "./views/project/index";
 
-import "./App.scss";
-import "antd/dist/reset.css";
 
 function App() {
   return (
