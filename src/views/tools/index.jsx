@@ -1,5 +1,5 @@
+import { Tag } from "antd";
 import Layout from "../layout/index";
-
 import LeftSearch from "../../components/leftSearch/index";
 
 export default function Page() {
@@ -33,21 +33,20 @@ export default function Page() {
               </svg>
               <div className="menu-dot"></div>
             </div>
-            <div className="job-card-title">UI / UX Designer</div>
+            <div className="job-card-title">PDF压缩</div>
             <div className="job-card-subtitle">
-              The User Experience Designer position exists to create compelling
-              and digital user experience through excellent design...
+              用于PDF文件压缩，可以自定义压缩比例
             </div>
             <div className="job-detail-buttons">
-              <button className="search-buttons detail-button">
-                Full Time
-              </button>
-              <button className="search-buttons detail-button">
-                Min. 1 Year
-              </button>
-              <button className="search-buttons detail-button">
-                Senior Level
-              </button>
+              <Tag bordered={false} className="detail-button">
+                标签1
+              </Tag>
+              <Tag bordered={false} className="detail-button">
+                标签2
+              </Tag>
+              <Tag bordered={false} className="detail-button">
+                标签3
+              </Tag>
             </div>
             <div className="job-card-buttons">
               <button className="search-buttons card-buttons">Apply Now</button>

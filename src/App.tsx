@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { ConfigProvider } from 'antd';
 
 import "antd/dist/reset.css";
 import "./App.scss";
@@ -8,8 +9,14 @@ import ToolsPage from "./views/tools/index";
 import ProjectPage from "./views/project/index";
 
 
-function App() {
-  return (
+const App: React.FC = () => (
+  <ConfigProvider
+  // theme={{
+  //   token: {
+  //     colorPrimary: '#00b96b',
+  //   },
+  // }}
+  >
     <div className="App">
       <Header></Header>
       <main>
@@ -20,7 +27,7 @@ function App() {
         </Routes>
       </main>
     </div>
-  );
-}
+  </ConfigProvider>
+)
 
 export default App;

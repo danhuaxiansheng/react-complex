@@ -1,5 +1,8 @@
-import "./style/index.scss";
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar } from "antd";
 import { NavLink } from "react-router-dom";
+
+import "./style/index.scss";
 
 export default function Page() {
   return (
@@ -46,24 +49,7 @@ export default function Page() {
             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
           </svg>
         </div>
-        <div className="user-menu">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="feather feather-square"
-          >
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          </svg>
-        </div>
-        <img
-          className="user-profile"
-          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png"
-          alt=""
-        />
+        <Avatar size={24} icon={<UserOutlined />} />
         <div className="user-name">蛋花</div>
       </div>
     </div>

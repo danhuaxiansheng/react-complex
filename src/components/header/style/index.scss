@@ -43,26 +43,12 @@
   align-items: center;
   font-weight: 500;
   svg {
-    width: 20px;
     color: #94949f;
+    margin-right: 0px;
   }
-}
 
-.user-menu {
-  position: relative;
-  margin-right: 8px;
-  padding-right: 8px;
-  border-right: 2px solid #d6d6db;
-  &:before {
-    position: absolute;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    border: 2px solid var(--header-bg-color);
-    right: 6px;
-    top: -1px;
-    background-color: var(--active-color);
+  .ant-avatar {
+    margin-right: 8px;
   }
 }
 
@@ -72,12 +58,4 @@
   cursor: pointer;
   fill: transparent;
   transition: 0.5s;
-}
-
-.user-profile {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 10px;
 }
