@@ -1,12 +1,11 @@
-import { useState } from "react";
-
-const Checkbox = ({ label, checked, id, className }) => {
+import { useState, useId } from "react";
+const Checkbox = ({ label, checked, className }) => {
   const [isChecked, setIsChecked] = useState(checked);
 
   const handleChange = (event) => {
     setIsChecked(event.target.checked);
   };
-
+  const id = useId();
   return (
     <>
       <input

@@ -1,11 +1,12 @@
 import Layout from "../layout/index";
-
 import LeftSearch from "../../components/leftSearch/index";
+import hookUtils from "./hook";
 
+const { toolsFilterList } = hookUtils();
 export default function Page() {
   return (
     <Layout>
-      <LeftSearch></LeftSearch>
+      <LeftSearch options={toolsFilterList}></LeftSearch>
       <div className="searched-jobs">
         <div className="searched-bar">
           <div className="searched-show">Showing 46 Jobs</div>

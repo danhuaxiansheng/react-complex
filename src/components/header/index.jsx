@@ -31,9 +31,7 @@ export default function Page() {
         蛋花网
       </div>
       <div className="header-menu">
-        <NavLink to="/" className="active" end>
-          工具库
-        </NavLink>
+        <NavLink to="/">工具库</NavLink>
         <NavLink to="/project">项目集</NavLink>
         <NavLink to="/components">组件库</NavLink>
       </div>

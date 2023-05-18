@@ -7,9 +7,8 @@ export default function CheckboxGroup({ list }) {
     <>
       {list.map((item) => {
         return (
-          <div className="checkbox-group" key={item.id}>
+          <div className="checkbox-group" key={item.label}>
             <Checkbox
-              id={item.id}
               label={item.label}
               checked={item.checked}
               className={item.className}
