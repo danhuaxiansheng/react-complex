@@ -1,5 +1,5 @@
 
-import SearchBlock from "../searchBlock/index";
+import SearchBlock from "@/components/searchBlock/index";
 import { filterTypeGroup } from "./type";
 
 import "./style/index.scss";

@@ -1,5 +1,5 @@
 
-import { filterTypeGroup } from "../../components/leftSearch/type";
+import { filterTypeGroup } from "@/components/leftSearch/type";
 export const filterList: Array<filterTypeGroup> = [
   {
     label: "办公工具",

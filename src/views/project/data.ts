@@ -1,7 +1,7 @@
 
-import { filterTypeGroup } from "../../components/leftSearch/type";
-import { ProjectType } from "../../type/BaseModel";
-import { SectionModel } from "../../type/SectionModel";
+import { filterTypeGroup } from "@/components/leftSearch/type";
+import { ProjectType } from "@/type/BaseModel";
+import { SectionModel } from "@/type/SectionModel";
 export const filterList: Array<filterTypeGroup> = [
   {
     label: "办公工具",

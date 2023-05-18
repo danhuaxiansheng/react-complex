@@ -1,4 +1,4 @@
-import CheckboxGroup from "../checkboxGroup/index";
+import CheckboxGroup from "@/components/checkboxGroup/index";
 
 import "./style/index.scss";
 

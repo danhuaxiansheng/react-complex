@@ -1,4 +1,4 @@
-import SearchBar from "../../components/searchBar/index";
+// import SearchBar from "../../components/searchBar/index";
 
 import "./style/index.scss";
 

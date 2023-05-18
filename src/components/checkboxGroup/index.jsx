@@ -1,4 +1,4 @@
-import Checkbox from "../checkbox/index";
+import Checkbox from "@/components/checkbox/index";
 
 import "./style/index.scss";
 
