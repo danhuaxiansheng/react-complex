@@ -9,13 +9,10 @@ function requireImage(src: string): string {
   return require("@/static/img/" + src);
 }
 
-const CARDS = 10;
 const MAX_VISIBILITY = 3;
 
-
-
 const Carousel = ({ children }: { children: ReactNode }) => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const count = React.Children.count(children);
 
   return (
