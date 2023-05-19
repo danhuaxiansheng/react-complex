@@ -205,16 +205,6 @@
   }
 }
 
-.job-title-wrapper {
-  display: flex;
-  align-items: center;
-  .job-card-title {
-    font-size: 20px;
-    margin-top: 0;
-    font-weight: 600;
-  }
-}
-
 .job-action {
   display: flex;
   align-items: center;
@@ -315,36 +305,6 @@
     }
   }
 }
-
-.overview-text {
-  margin-top: 30px;
-  &-header {
-    font-weight: 600;
-    margin-bottom: 25px;
-  }
-  &-subheader {
-    font-size: 13px;
-    line-height: 2em;
-  }
-  &-item {
-    font-size: 13px;
-    position: relative;
-    display: flex;
-    & + & {
-      margin-top: 20px;
-    }
-    &:before {
-      content: "";
-      border: 2px solid #61bcff;
-      border-radius: 50%;
-      height: 8px;
-      width: 8px;
-      margin-right: 8px;
-      flex-shrink: 0;
-    }
-  }
-}
-
 .detail-page {
   .job-cards,
   .searched-bar {

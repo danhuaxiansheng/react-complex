@@ -20,19 +20,19 @@ export const cardList: SectionModel[] = [
       ProjectType.ElementUI,
     ],
   },
-  {
-    title: "LD框架",
-    desc: "使用企业微信扫码登录",
-    previewSrc: ":3002",
-    githubSrc: "Front-Store/Front-FrameWork",
-    imgSrc: ["LD1.png", "LD2.png", "LD3.png", "LD4.png"],
-    types: [
-      ProjectType.Vue3,
-      ProjectType.TypeScript,
-      ProjectType.Sass,
-      ProjectType.ElementPlus,
-    ],
-  },
+  // {
+  //   title: "LD框架",
+  //   desc: "使用企业微信扫码登录",
+  //   previewSrc: ":3002",
+  //   githubSrc: "Front-Store/Front-FrameWork",
+  //   imgSrc: ["LD1.png", "LD2.png", "LD3.png", "LD4.png"],
+  //   types: [
+  //     ProjectType.Vue3,
+  //     ProjectType.TypeScript,
+  //     ProjectType.Sass,
+  //     ProjectType.ElementPlus,
+  //   ],
+  // },
   {
     title: "视频网站",
     desc: "在线解析各大网站的vip视频。",

@@ -12,7 +12,7 @@
     padding: 10px;
     border-radius: 8px;
   }
-  &-title {
+  .job-card-title {
     font-weight: 600;
     margin-top: 16px;
     font-size: 14px;
@@ -23,23 +23,10 @@
     margin-top: 14px;
     line-height: 1.6em;
   }
-  &-header {
+  .job-card-header {
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
   }
-}
-
-.menu-dot {
-  background-color: var(--placeholder-color);
-  box-shadow: -6px 0 0 0 var(--placeholder-color),
-    6px 0 0 0 var(--placeholder-color);
-  width: 4px;
-  height: 4px;
-  border: 0;
-  padding: 0;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: 8px;
 }
 
 .job-card-buttons {

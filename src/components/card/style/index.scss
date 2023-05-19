@@ -12,20 +12,11 @@
     padding: 10px;
     border-radius: 8px;
   }
-  &-title {
-    font-weight: 600;
-    margin-top: 16px;
-    font-size: 14px;
-  }
   &-subtitle {
     color: var(--subtitle-color);
     font-size: 13px;
     margin-top: 14px;
     line-height: 1.6em;
-  }
-  &-header {
-    display: flex;
-    align-items: flex-start;
   }
 }
 
