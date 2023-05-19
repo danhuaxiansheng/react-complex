@@ -50,9 +50,9 @@ export enum ProjectType {
  */
 export interface SelectModel {
   // 名称
-  title?: string;
+  title: string;
   // 值
-  value?: string | number;
+  value: ProjectType;
 }
 
 /*

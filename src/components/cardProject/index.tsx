@@ -1,6 +1,6 @@
 import { SectionModel } from "@/type/SectionModel";
 import "./style/index.scss";
-import { Tag } from "antd";
+// import { Tag } from "antd";
 
 // function requireImage(src: string): string {
 //   return require("@/assets/img/" + src);
@@ -14,13 +14,6 @@ export default function Card({ title, desc, types }: SectionModel) {
       </div>
       <div className="job-card-title">{title}</div>
       <div className="job-card-subtitle">{desc}</div>
-      <div className="job-detail-buttons">
-        {types?.map((item) => (
-          <Tag key={item} bordered={false} className="detail-button">
-            {item}
-          </Tag>
-        ))}
-      </div>
       <div className="job-card-buttons">
         <button className="search-buttons card-buttons">查看</button>
       </div>
