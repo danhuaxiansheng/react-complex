@@ -4,11 +4,8 @@ import "./style/index.scss";
 
 export default function Layout({ children }) {
   return (
-    <div className="job">
-      <div className="wrapper">
-        {/* <SearchBar></SearchBar> */}
-        <div className="main-container">{children}</div>
-      </div>
+    <div className="container">
+      <div className="main-container">{children}</div>
     </div>
   );
 }

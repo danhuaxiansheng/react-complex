@@ -1,7 +1,8 @@
 import bgImage from "@/static/img/footer/icon-police.png";
+import "./style/index.css"
 
 export default function Footer() {
-  return <div className="footer-panle">
+  return <div className="footer">
     <img src={bgImage} />
     网站备案号
     <a href="https://beian.miit.gov.cn/" target="_blank">
