@@ -2,7 +2,7 @@
 
 import "./style/index.scss";
 
-export default function Page({ children }) {
+export default function Layout({ children }) {
   return (
     <div className="job">
       <div className="wrapper">

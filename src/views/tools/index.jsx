@@ -1,6 +1,6 @@
-import Layout from "../layout/index";
-import LeftSearch from "../../components/leftSearch/index";
-import Card from "../../components/card/index";
+import Layout from "@/views/layout/index";
+import LeftSearch from "@/components/leftSearch/index";
+import Card from "@/components/card/index";
 
 import hookUtils from "./hook";
 
