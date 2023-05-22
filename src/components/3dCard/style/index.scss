@@ -38,7 +38,10 @@ $color-black: #1f2937;
     margin: 0 0 0.7em;
     color: $color-black;
   }
-
+  img {
+    height: 100%;
+    width: 100%;
+  }
   p,
   h2 {
     transition: all 0.3s ease-out;
