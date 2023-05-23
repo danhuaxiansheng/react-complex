@@ -1,12 +1,21 @@
-import { UserOutlined } from "@ant-design/icons";
-import { Avatar } from "antd";
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
+import { UserOutlined } from "@ant-design/icons";
+import { Avatar } from "antd";
+
 import "./style/index.scss";
+
+function SetTitle() {
+  useEffect(() => {
+    document.title = "蛋花网";
+  }, []);
+}
 
 export default function Page() {
   return (
     <div className="header">
+      <SetTitle></SetTitle>
       <div className="logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path
