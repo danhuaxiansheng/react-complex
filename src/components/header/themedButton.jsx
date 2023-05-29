@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "@/reducers/context";
+import { AppContext } from "@/reducers/themeContext";
 
 const ThemedButton = React.memo(() => {
   const ctx = useContext(AppContext) || {};

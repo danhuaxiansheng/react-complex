@@ -11,7 +11,7 @@ import Footer from "@/components/footer/index";
 import ToolsPage from "@/views/tools/index";
 import ProjectPage from "@/views/project/index";
 
-import { AppProvider, AppContext } from "@/reducers/context";
+import { AppProvider, AppContext } from "@/reducers/themeContext";
 
 function Main() {
   const { state } = useContext(AppContext);
