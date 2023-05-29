@@ -15,7 +15,7 @@ import { AppProvider, AppContext } from "@/reducers/context";
 
 function Main() {
   const { state } = useContext(AppContext);
-  return <div className={state.theme}>
+  return <div className={state.theme + '-mode'}>
     <Header></Header>
     <main>
       <Routes>

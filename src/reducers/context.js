@@ -2,7 +2,7 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  theme: "dark",
+  theme: "light",
 };
 
 const reducer = (state, action) => {
