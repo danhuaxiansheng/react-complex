@@ -3,11 +3,11 @@ import { AppContext } from "@/reducers/context";
 
 const ThemedButton = React.memo(() => {
   const ctx = useContext(AppContext) || {};
-  const { dispatch } = ctx;
+  const { dispatch, state } = ctx;
   const changeTheme = () => {
     dispatch({
       type: "changeTheme",
-      val: "light",
+      val: state.theme === "light" ? "dark" : "light",
     });
   };
   return (

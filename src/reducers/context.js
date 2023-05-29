@@ -17,10 +17,9 @@ const reducer = (state, action) => {
   }
 };
 
-export const AppContext = createContext(initialState);
+export const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
-  debugger;
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <AppContext.Provider value={{ state, dispatch }}>

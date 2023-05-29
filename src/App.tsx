@@ -1,7 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { Routes, Route } from "react-router-dom";
-import { ConfigProvider } from 'antd';
+// import { ConfigProvider } from 'antd';
 
 import "antd/dist/reset.css";
 import "./App.scss";
@@ -11,33 +11,28 @@ import Footer from "@/components/footer/index";
 import ToolsPage from "@/views/tools/index";
 import ProjectPage from "@/views/project/index";
 
-import { AppProvider } from "@/reducers/context";
+import { AppProvider, AppContext } from "@/reducers/context";
 
-const App: React.FC = () => {
-  return <AppProvider >
-    <ConfigProvider
-    // theme={{
-    //   token: {
-    //     colorPrimary: '#00b96b',
-    //   },
-    // }}
-    >
-      <div>
-        <Header></Header>
-        <main>
-          <Routes>
-            <Route path="/" element={<ToolsPage />} />
-            <Route path="/project" element={<ProjectPage />} />
-            <Route path="/components" element={<ProjectPage />} />
-          </Routes>
-        </main>
-        <footer>
-          <Footer></Footer>
-        </footer>
-      </div>
-    </ConfigProvider>
-  </AppProvider>
+function Main() {
+  const { state } = useContext(AppContext);
+  return <div className={state.theme}>
+    <Header></Header>
+    <main>
+      <Routes>
+        <Route path="/" element={<ToolsPage />} />
+        <Route path="/project" element={<ProjectPage />} />
+        <Route path="/components" element={<ProjectPage />} />
+      </Routes>
+    </main>
+    <footer>
+      {state.theme}
+      <Footer></Footer>
+    </footer>
+  </div>
 }
 
+const App: React.FC = () => {
+  return <AppProvider ><Main></Main></AppProvider>
+}
 
 export default App;
