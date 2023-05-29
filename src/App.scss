@@ -22,6 +22,7 @@
   --button-color: #fff;
 }
 
+/** 暗黑模式 */
 .dark-mode {
   --body-bg-color: #1d1d1d;
   --theme-bg-color: #13131a;
@@ -48,12 +49,12 @@
     color: var(--body-color);
     border-color: var(--body-color);
   }
-
   .detail-button {
     background-color: var(--inactive-color);
     color: var(--subtitle-color);
   }
 }
+/** 暗黑模式 */
 
 ::placeholder {
   color: var(--placeholder-color);

@@ -9,6 +9,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+// 引入 React.StrictMode 组件之后 APP文件将会执行两次（仅开发模式生效）
 root.render(
   <React.StrictMode>
     <BrowserRouter>

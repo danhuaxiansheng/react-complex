@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-import { UserOutlined } from "@ant-design/icons";
-import { Avatar } from "antd";
+import ThemedButton from "./themedButton";
 
 import "./style/index.scss";
 
@@ -37,7 +35,7 @@ export default function Page() {
             data-original="#518ef8"
           />
         </svg>
-        蛋花网
+        AGE NET
       </div>
       <div className="header-menu">
         <NavLink to="/">工具库</NavLink>
@@ -45,19 +43,7 @@ export default function Page() {
         <NavLink to="/components">组件库</NavLink>
       </div>
       <div className="user-settings">
-        <div className="dark-light">
-          <svg
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-          </svg>
-        </div>
-        <Avatar size={24} icon={<UserOutlined />} />
-        <div className="user-name">蛋花</div>
+        <ThemedButton></ThemedButton>
       </div>
     </div>
   );
