@@ -2,7 +2,6 @@ import { useContext } from "react";
 
 import Layout from "@/views/layout/index";
 import CardProject from "@/components/cardProject";
-
 import LeftSearch from "@/components/LeftSearch/index";
 
 import {

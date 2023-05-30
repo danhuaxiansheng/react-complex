@@ -2,23 +2,11 @@ import { ProjectType } from "@/type/BaseModel";
 import { ReactNode, createContext, useReducer, Dispatch } from "react";
 
 type ActionType = 'added' | 'deleted';
-
-type Action = {
-  type: ActionType;
-  id: number;
-};
-
+type Action = { type: ActionType; id: number; };
 type ConditionState = number[];
+type ConditionContextType = { state: ConditionState; dispatch: Dispatch<Action>; };
 
-type ConditionContextType = {
-  state: ConditionState;
-  dispatch: Dispatch<Action>;
-};
-
-export const ConditionContext = createContext<ConditionContextType>({
-  state: [],
-  dispatch: () => { },
-});
+export const ConditionContext = createContext<ConditionContextType>({ state: [], dispatch: () => { } });
 
 function reducer(state: number[], action: any): number[] {
   switch (action.type) {
@@ -35,8 +23,7 @@ function reducer(state: number[], action: any): number[] {
   }
 }
 
-const initialState = Object.values(ProjectType)
-  .filter((value) => typeof value === "number") as number[];
+const initialState = Object.values(ProjectType).filter((value) => typeof value === "number") as number[];
 
 export const ConditionProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
