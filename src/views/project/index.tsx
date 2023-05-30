@@ -16,10 +16,11 @@ import { ProjectType } from "@/type/BaseModel";
 
 const PageMain = () => {
   const { state } = useContext(ConditionContext);
-
-  const filteredCardList = cardList.filter((card: SectionModel) =>
-    card.types && card.types?.some((type: ProjectType) => state.includes(type))
-  );
+  const filteredCardList = cardList.filter((card: SectionModel) => {
+    return !card.types?.some((type: ProjectType) => {
+      return !state.includes(type);
+    })
+  });
 
   return (
     <Layout>

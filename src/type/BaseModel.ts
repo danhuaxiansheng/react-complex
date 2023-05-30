@@ -58,8 +58,8 @@ export interface SelectModel {
  * @LastEditTime: 2022年7月13日10点26分
  */
 export const ProjectTypeList: Array<SelectModel> = [
-  { title: "Vue3", value: ProjectType.Vue3 },
   { title: "Vue2", value: ProjectType.Vue2 },
+  { title: "Vue3", value: ProjectType.Vue3 },
   { title: "React", value: ProjectType.React },
   { title: "Asp", value: ProjectType.ASP_NetCore },
 ];

@@ -16,9 +16,9 @@ export const cardList: SectionModel[] = [
     types: [
       ProjectType.Vue2,
       ProjectType.TypeScript,
-      ProjectType.WebPack,
-      ProjectType.Sass,
       ProjectType.ElementUI,
+      ProjectType.Sass,
+      ProjectType.WebPack,
     ],
   },
   // {
@@ -40,7 +40,12 @@ export const cardList: SectionModel[] = [
     previewSrc: ":3000/#/videoIndex",
     githubSrc: "vue3-books",
     imgSrc: ["video_1.png", "video_2.png", "video_3.png"],
-    types: [ProjectType.TypeScript, ProjectType.Vue3],
+    types: [
+      ProjectType.Vue3,
+      ProjectType.JavaScript,
+      ProjectType.ElementUI,
+      ProjectType.Less,
+      ProjectType.WebPack],
   },
   {
     title: "小说网站",
@@ -48,7 +53,13 @@ export const cardList: SectionModel[] = [
     githubSrc: "vue3-books",
     previewSrc: ":3000/#/bookIndex",
     imgSrc: ["books_1.png", "books_2.png"],
-    types: [ProjectType.TypeScript, ProjectType.Vue3],
+    types: [
+      ProjectType.Vue3,
+      ProjectType.JavaScript,
+      ProjectType.ElementUI,
+      ProjectType.Less,
+      ProjectType.Vite
+    ],
   },
   {
     title: "网络阵地系统",
@@ -56,7 +67,12 @@ export const cardList: SectionModel[] = [
     githubSrc: "vue3-position",
     previewSrc: ":3011",
     imgSrc: ["position_net_1.png"],
-    types: [ProjectType.Vue3],
+    types: [
+      ProjectType.Vue3,
+      ProjectType.JavaScript,
+      ProjectType.AntDesignVue,
+      ProjectType.Less,
+      ProjectType.Vite],
   },
   {
     title: "网络阵地系统后台",
@@ -64,14 +80,23 @@ export const cardList: SectionModel[] = [
     githubSrc: "vue3-position-nodejs",
     previewSrc: ":3010",
     imgSrc: ["position_1.png", "position_2.png"],
-    types: [ProjectType.MySql, ProjectType.Vue3],
+    types: [
+      ProjectType.JavaScript,
+      ProjectType.Vue3,
+      ProjectType.MySql,
+      ProjectType.WebPack,
+    ],
   },
   {
     title: "webpack-Demo",
     desc: "webpack示例章节",
     githubSrc: "webpack",
     imgSrc: ["webpack_1.png", "webpack_2.png"],
-    types: [ProjectType.WebPack, ProjectType.Vue3],
+    types: [
+      ProjectType.Vue3,
+      ProjectType.JavaScript,
+      ProjectType.WebPack,
+    ],
   },
 ];
 
