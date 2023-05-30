@@ -1,5 +1,5 @@
 import Layout from "@/views/layout/index";
-import LeftSearch from "@/components/leftSearch/index";
+import LeftSearch from "@/components/LeftSearch/index";
 import Card from "@/components/card/index";
 
 import hookUtils from "./hook";

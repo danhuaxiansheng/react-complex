@@ -1,8 +1,6 @@
-import { filterTypeGroup } from "@/components/leftSearch/type";
+import { filterTypeGroup } from "@/components/LeftSearch/type";
 import { cardList } from "./data";
-
 import { ProjectTypeList, PlugList, LanguageList, CssList, PackList, SelectModel } from "@/type/BaseModel";
-
 
 function getChildrenTypes(list: SelectModel[]) {
   return list.map(item => {
@@ -14,18 +12,12 @@ function getChildrenTypes(list: SelectModel[]) {
     }
   })
 }
-export default function Hook() {
 
-  const filterList: Array<filterTypeGroup> = [
-    { label: "前端框架", children: getChildrenTypes(ProjectTypeList) },
-    { label: "开发语言", children: getChildrenTypes(LanguageList) },
-    { label: "UI库", children: getChildrenTypes(PlugList) },
-    { label: "CSS框架", children: getChildrenTypes(CssList) },
-    { label: "打包方式", children: getChildrenTypes(PackList) },
-  ];
+export const filterList: Array<filterTypeGroup> = [
+  { label: "前端框架", children: getChildrenTypes(ProjectTypeList) },
+  { label: "开发语言", children: getChildrenTypes(LanguageList) },
+  { label: "UI库", children: getChildrenTypes(PlugList) },
+  { label: "CSS框架", children: getChildrenTypes(CssList) },
+  { label: "打包方式", children: getChildrenTypes(PackList) },
+];
 
-  return {
-    filterList,
-    cardList
-  };
-}

@@ -1,26 +1,29 @@
 import { useContext } from "react";
 
 import Layout from "@/views/layout/index";
-import LeftSearch from "@/components/leftSearch/index";
-import CardProject from "@/components/cardProject/index";
+import CardProject from "@/components/cardProject";
+
+import LeftSearch from "@/components/LeftSearch/index";
 
 import {
-  ConditionProvider,
   ConditionContext,
+  ConditionProvider,
 } from "@/reducers/conditionContext";
 
-import hookUtils from "./hook";
+import { cardList, filterList } from "./data";
+import { SectionModel } from "@/type/SectionModel";
+import { ProjectType } from "@/type/BaseModel";
 
-const { filterList, cardList } = hookUtils();
-
-function PageMain() {
+const PageMain = () => {
   const { state } = useContext(ConditionContext);
-  var dataList = cardList.filter((d) =>
-    d.types.some((item) => state.includes(item))
+
+  const filteredCardList = cardList.filter((card: SectionModel) =>
+    card.types && card.types?.some((type: ProjectType) => state.includes(type))
   );
+
   return (
     <Layout>
-      <LeftSearch options={filterList}></LeftSearch>
+      <LeftSearch options={filterList} />
       <div className="searched-jobs">
         <div className="searched-bar">
           <div className="searched-show">共 {cardList.length} 条结果</div>
@@ -30,14 +33,14 @@ function PageMain() {
           </div>
         </div>
         <div className="job-cards">
-          {dataList.map((item) => (
-            <CardProject key={item.title} {...item}></CardProject>
+          {filteredCardList.map((card) => (
+            <CardProject key={card.title} {...card} />
           ))}
         </div>
       </div>
     </Layout>
   );
-}
+};
 
 export default function Page() {
   return (

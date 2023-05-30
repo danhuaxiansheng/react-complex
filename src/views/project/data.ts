@@ -1,6 +1,7 @@
 
-import { ProjectType } from "@/type/BaseModel";
 import { SectionModel } from "@/type/SectionModel";
+import { filterTypeGroup } from "@/components/LeftSearch/type";
+import { ProjectType, ProjectTypeList, PlugList, LanguageList, CssList, PackList, SelectModel } from "@/type/BaseModel";
 
 /**
  * 当前所有项目集合
@@ -73,3 +74,25 @@ export const cardList: SectionModel[] = [
     types: [ProjectType.WebPack, ProjectType.Vue3],
   },
 ];
+
+/**
+ * 条件区
+ */
+export const filterList: Array<filterTypeGroup> = [
+  { label: "前端框架", children: getChildrenTypes(ProjectTypeList) },
+  { label: "开发语言", children: getChildrenTypes(LanguageList) },
+  { label: "UI库", children: getChildrenTypes(PlugList) },
+  { label: "CSS框架", children: getChildrenTypes(CssList) },
+  { label: "打包方式", children: getChildrenTypes(PackList) },
+];
+
+function getChildrenTypes(list: SelectModel[]) {
+  return list.map(item => {
+    return {
+      label: item.title,
+      value: item.value,
+      count: cardList.filter(card => card.types?.includes(item.value)).length,
+      checked: true,
+    }
+  })
+}

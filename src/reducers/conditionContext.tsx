@@ -1,41 +1,48 @@
-// context.js
 import { ProjectType } from "@/type/BaseModel";
-import { ReactNode, createContext, useReducer } from "react";
+import { ReactNode, createContext, useReducer, Dispatch } from "react";
 
-function reducer(tasks: any, action: any) {
+type ActionType = 'added' | 'deleted';
+
+type Action = {
+  type: ActionType;
+  id: number;
+};
+
+type ConditionState = number[];
+
+type ConditionContextType = {
+  state: ConditionState;
+  dispatch: Dispatch<Action>;
+};
+
+export const ConditionContext = createContext<ConditionContextType>({
+  state: [],
+  dispatch: () => { },
+});
+
+function reducer(state: number[], action: any): number[] {
   switch (action.type) {
-    case 'added': {
-      if (tasks.includes(action.id)) {
-        return tasks;
+    case "added":
+      if (state.includes(action.id)) {
+        return state;
       } else {
-        return [...tasks, action.id]
+        return [...state, action.id];
       }
-    }
-    // case 'changed': {
-    //   return tasks.map((t: any) => {
-    //     if (t.id === action.task.id) {
-    //       return action.task;
-    //     } else {
-    //       return t;
-    //     }
-    //   });
-    // }
-    case 'deleted': {
-      return tasks.filter((t: any) => t !== action.id);
-    }
-    default: {
-      throw Error('未知 action：' + action.type);
-    }
+    case "deleted":
+      return state.filter((id: any) => id !== action.id);
+    default:
+      throw new Error(`Unknown action type: ${action.type}`);
   }
 }
 
-const initialState: Array<Number> = Object.values(ProjectType).filter(value => typeof value === 'number') as Array<Number>;
-
-export const ConditionContext = createContext({ state: initialState, dispatch: (action: any) => { } });
+const initialState = Object.values(ProjectType)
+  .filter((value) => typeof value === "number") as number[];
 
 export const ConditionProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return (<ConditionContext.Provider value={{ state, dispatch }}>
-    {children}
-  </ ConditionContext.Provider>);
+  return (
+    <ConditionContext.Provider value={{ state, dispatch }}>
+      {children}
+    </ConditionContext.Provider>
+  );
 };

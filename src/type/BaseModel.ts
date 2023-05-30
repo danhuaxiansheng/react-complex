@@ -35,7 +35,6 @@ export enum ProjectType {
 
   // 数据库
   MySql,
-
 }
 
 /*

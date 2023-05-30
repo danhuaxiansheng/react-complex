@@ -1,4 +1,4 @@
-import { filterTypeGroup } from "@/components/leftSearch/type";
+import { filterTypeGroup } from "@/components/LeftSearch/type";
 import { filterList, data } from "./data";
 
 export default function Hook() {
