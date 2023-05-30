@@ -4,21 +4,15 @@ import Layout from "@/views/layout/index";
 import CardProject from "@/components/cardProject";
 import LeftSearch from "@/components/LeftSearch/index";
 
-import {
-  ConditionContext,
-  ConditionProvider,
-} from "@/reducers/conditionContext";
-
-import { cardList, filterList } from "./data";
+import { ConditionContext, ConditionProvider } from "@/reducers/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
 import { ProjectType } from "@/type/BaseModel";
+import { cardList, filterList } from "./data";
 
 const PageMain = () => {
   const { state } = useContext(ConditionContext);
   const filteredCardList = cardList.filter((card: SectionModel) => {
-    return !card.types?.some((type: ProjectType) => {
-      return !state.includes(type);
-    })
+    return !card.types?.some((type: ProjectType) => !state.includes(type))
   });
 
   return (
