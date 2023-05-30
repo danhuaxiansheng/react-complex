@@ -1,19 +1,29 @@
 import { filterTypeGroup } from "@/components/leftSearch/type";
 import { cardList } from "./data";
 
-import { ProjectTypeList } from "@/type/BaseModel";
+import { ProjectTypeList, PlugList, LanguageList, CssList, PackList, SelectModel } from "@/type/BaseModel";
 
+
+function getChildrenTypes(list: SelectModel[]) {
+  return list.map(item => {
+    return {
+      label: item.title,
+      value: item.value,
+      count: cardList.filter(card => card.types?.includes(item.value)).length,
+      checked: true,
+    }
+  })
+}
 export default function Hook() {
-  const filterList: Array<filterTypeGroup> = [{
-    label: "开发语言",
-    children: ProjectTypeList.map(item => {
-      return {
-        label: item.title,
-        count: cardList.filter(card => card.types?.includes(item.value)).length,
-        checked: true,
-      }
-    })
-  }];
+
+  const filterList: Array<filterTypeGroup> = [
+    { label: "前端框架", children: getChildrenTypes(ProjectTypeList) },
+    { label: "开发语言", children: getChildrenTypes(LanguageList) },
+    { label: "UI库", children: getChildrenTypes(PlugList) },
+    { label: "CSS框架", children: getChildrenTypes(CssList) },
+    { label: "打包方式", children: getChildrenTypes(PackList) },
+  ];
+
   return {
     filterList,
     cardList

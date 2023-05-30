@@ -1,29 +1,27 @@
 // context.js
+import { ProjectType } from "@/type/BaseModel";
 import { ReactNode, createContext, useReducer } from "react";
 
 function reducer(tasks: any, action: any) {
   switch (action.type) {
     case 'added': {
-      return [
-        ...tasks,
-        {
-          id: action.id,
-          text: action.text,
-          done: false,
-        },
-      ];
+      if (tasks.includes(action.id)) {
+        return tasks;
+      } else {
+        return [...tasks, action.id]
+      }
     }
-    case 'changed': {
-      return tasks.map((t: any) => {
-        if (t.id === action.task.id) {
-          return action.task;
-        } else {
-          return t;
-        }
-      });
-    }
+    // case 'changed': {
+    //   return tasks.map((t: any) => {
+    //     if (t.id === action.task.id) {
+    //       return action.task;
+    //     } else {
+    //       return t;
+    //     }
+    //   });
+    // }
     case 'deleted': {
-      return tasks.filter((t: any) => t.id !== action.id);
+      return tasks.filter((t: any) => t !== action.id);
     }
     default: {
       throw Error('未知 action：' + action.type);
@@ -31,7 +29,7 @@ function reducer(tasks: any, action: any) {
   }
 }
 
-const initialState: Array<Number> = [];
+const initialState: Array<Number> = Object.values(ProjectType).filter(value => typeof value === 'number') as Array<Number>;
 
 export const ConditionContext = createContext({ state: initialState, dispatch: (action: any) => { } });
 

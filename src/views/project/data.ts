@@ -63,13 +63,13 @@ export const cardList: SectionModel[] = [
     githubSrc: "vue3-position-nodejs",
     previewSrc: ":3010",
     imgSrc: ["position_1.png", "position_2.png"],
-    types: [ProjectType.NodeJS, ProjectType.MySql],
+    types: [ProjectType.MySql, ProjectType.Vue3],
   },
   {
     title: "webpack-Demo",
     desc: "webpack示例章节",
     githubSrc: "webpack",
     imgSrc: ["webpack_1.png", "webpack_2.png"],
-    types: [ProjectType.WebPack, ProjectType.NodeJS],
+    types: [ProjectType.WebPack, ProjectType.Vue3],
   },
 ];

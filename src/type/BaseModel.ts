@@ -6,9 +6,8 @@
  */
 export enum ProjectType {
   // 前端基础
-  Html,
-  Css,
   JavaScript,
+  TypeScript,
 
   // 前端框架
   Vue2,
@@ -16,6 +15,7 @@ export enum ProjectType {
   React,
 
   // CSS框架
+  Css,
   Sass,
   Less,
 
@@ -26,20 +26,16 @@ export enum ProjectType {
 
   // 代码打包工具
   WebPack,
-
-  // 类型检查 架构
-  TypeScript,
+  Vite,
 
   // 后端服务器框架
-  NodeJS,
   ASP_NetCore,
+  JSP,
+  Python,
 
   // 数据库
-  Redis,
   MySql,
 
-  //  其他工具
-  Express,
 }
 
 /*
@@ -55,6 +51,7 @@ export interface SelectModel {
   value: ProjectType;
 }
 
+
 /*
  * @Description:项目类型列表
  * @Autor: zhp
@@ -62,35 +59,32 @@ export interface SelectModel {
  * @LastEditTime: 2022年7月13日10点26分
  */
 export const ProjectTypeList: Array<SelectModel> = [
-  { title: "NodeJS", value: ProjectType.NodeJS },
-  { title: "WebPack", value: ProjectType.WebPack },
-  { title: "Express", value: ProjectType.Express },
-  { title: "Redis", value: ProjectType.Redis },
-  { title: "MySql", value: ProjectType.MySql },
-  { title: "ASP_NetCore", value: ProjectType.ASP_NetCore },
   { title: "Vue3", value: ProjectType.Vue3 },
   { title: "Vue2", value: ProjectType.Vue2 },
   { title: "React", value: ProjectType.React },
-  { title: "JavaScript", value: ProjectType.JavaScript },
-  { title: "TypeScript", value: ProjectType.TypeScript },
-  { title: "Sass", value: ProjectType.Sass },
-  { title: "Less", value: ProjectType.Less },
+  { title: "Asp", value: ProjectType.ASP_NetCore },
 ];
 
-/*
- * @Description:技术框架类型
- * @Autor: zhp
- * @Date: 2022年7月13日10点26分
- * @LastEditTime: 2022年7月13日10点26分
- */
-export const FrameTypeList: Array<SelectModel> = [
-  { title: "Html", value: ProjectType.Html },
-  { title: "Css", value: ProjectType.Css },
+export const PlugList: Array<SelectModel> = [
+  { title: "AntDesignVue", value: ProjectType.AntDesignVue },
+  { title: "ElementUI", value: ProjectType.ElementUI },
+  { title: "ElementPlus", value: ProjectType.ElementPlus },
+];
+
+export const LanguageList: Array<SelectModel> = [
   { title: "JavaScript", value: ProjectType.JavaScript },
-  { title: "Vue3", value: ProjectType.Vue3 },
-  { title: "Vue2", value: ProjectType.Vue2 },
-  { title: "WebPack", value: ProjectType.WebPack },
   { title: "TypeScript", value: ProjectType.TypeScript },
+];
+
+export const CssList: Array<SelectModel> = [
   { title: "Sass", value: ProjectType.Sass },
   { title: "Less", value: ProjectType.Less },
+  { title: "Css", value: ProjectType.Css },
 ];
+
+export const PackList: Array<SelectModel> = [
+  { title: "WebPack", value: ProjectType.WebPack },
+  { title: "Vite", value: ProjectType.Vite },
+];
+
+

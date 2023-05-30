@@ -1,11 +1,23 @@
+import { useContext } from "react";
+
 import Layout from "@/views/layout/index";
 import LeftSearch from "@/components/leftSearch/index";
 import CardProject from "@/components/cardProject/index";
 
+import {
+  ConditionProvider,
+  ConditionContext,
+} from "@/reducers/conditionContext";
+
 import hookUtils from "./hook";
 
 const { filterList, cardList } = hookUtils();
-export default function Page() {
+
+function PageMain() {
+  const { state } = useContext(ConditionContext);
+  var dataList = cardList.filter((d) =>
+    d.types.some((item) => state.includes(item))
+  );
   return (
     <Layout>
       <LeftSearch options={filterList}></LeftSearch>
@@ -18,11 +30,19 @@ export default function Page() {
           </div>
         </div>
         <div className="job-cards">
-          {cardList.map((item) => (
+          {dataList.map((item) => (
             <CardProject key={item.title} {...item}></CardProject>
           ))}
         </div>
       </div>
     </Layout>
+  );
+}
+
+export default function Page() {
+  return (
+    <ConditionProvider>
+      <PageMain></PageMain>
+    </ConditionProvider>
   );
 }

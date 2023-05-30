@@ -25,7 +25,6 @@ function Main() {
       </Routes>
     </main>
     <footer>
-      {state.theme}
       <Footer></Footer>
     </footer>
   </div>

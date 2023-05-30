@@ -12,6 +12,7 @@ export default function CheckboxGroup({ list }) {
               label={item.label}
               checked={item.checked}
               className={item.className}
+              value={item.value}
             />
             <span className="job-number">{item.count}</span>
           </div>
