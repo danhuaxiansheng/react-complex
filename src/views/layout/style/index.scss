@@ -68,11 +68,7 @@
   margin-top: 14px;
 }
 
-.job-style {
-  display: none;
-}
-
-.job-style + label:before {
+.label-checkbox + label:before {
   content: "";
   margin-right: 10px;
   width: 16px;
@@ -82,7 +78,7 @@
   cursor: pointer;
 }
 
-.job-style:checked + label:before {
+.label-checkbox:checked + label:before {
   background-color: var(--active-color);
   border-color: var(--active-color);
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-check'%3e%3cpath d='M20 6L9 17l-5-5'/%3e%3c/svg%3e");
@@ -91,7 +87,7 @@
   background-repeat: no-repeat;
 }
 
-.job-style:checked + label + span {
+.label-checkbox:checked + label + span {
   background-color: var(--active-light-color);
   color: var(--active-color);
 }

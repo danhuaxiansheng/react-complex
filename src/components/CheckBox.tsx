@@ -1,5 +1,5 @@
 // ------ components/Checkbox.js ------
-import { useState } from "react";
+import { useState, useId } from "react";
 
 interface CheckboxProps {
   label: string;
@@ -16,16 +16,18 @@ const Checkbox: React.FC<CheckboxProps> = ({ label, checked, className, value, o
     setIsChecked(checked);
     onChange(value, checked);
   };
-
+  const id = useId();
   return (
     <>
       <input
+        id={id}
         type="checkbox"
         checked={isChecked}
         onChange={handleChange}
-        className={className}
+        className={`label-checkbox ` + className ?? ''}
+        style={{ display: 'none' }}
       />
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
     </>
   );
 };
