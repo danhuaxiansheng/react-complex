@@ -10,7 +10,7 @@ import Header from "@/components/header/index";
 import Footer from "@/components/footer/index";
 import ToolsPage from "@/views/tools/index";
 import ProjectPage from "@/views/project/index";
-// import ComponentsPage from "@/views/components/index";
+import ComponentsPage from "@/views/components/index";
 
 
 import { AppProvider, AppContext } from "@/reducers/themeContext";
@@ -23,7 +23,7 @@ function Main() {
       <Routes>
         <Route path="/" element={<ToolsPage />} />
         <Route path="/project" element={<ProjectPage />} />
-        <Route path="/components" element={<ProjectPage />} />
+        <Route path="/components" element={<ComponentsPage />} />
       </Routes>
     </main>
     <footer>

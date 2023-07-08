@@ -1,6 +1,6 @@
 
 import { useContext } from "react";
-import { filterTypeGroup } from "./type";
+import { filterTypeGroup } from "@/components/LeftSearch/type";
 
 import Checkbox from "@/components/CheckBox";
 import { ConditionContext } from "@/reducers/conditionContext";
