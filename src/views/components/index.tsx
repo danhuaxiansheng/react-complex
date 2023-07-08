@@ -8,7 +8,7 @@ const PageMain = () => {
     "马克思主义基本原理概论.pdf",
     "信息经济学.pdf",
     "信息系统开发.pdf",
-    "中国近现代史纲要"];
+    "中国近现代史纲要.pdf"];
 
   function handleClick(key: string) {
 
