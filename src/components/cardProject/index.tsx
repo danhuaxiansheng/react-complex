@@ -1,8 +1,13 @@
 import { SectionModel } from "@/type/SectionModel";
 import Card3D from "@/components/3dCard/index"
+import { Button } from 'antd';
 import "./style/index.scss";
 
-export default function CardProject({ title, desc, imgSrc }: SectionModel) {
+export default function CardProject({ title, desc, imgSrc, previewSrc, githubSrc }: SectionModel) {
+  const openGithub = () => {
+    window.open("https://github.com/danhuaxiansheng/" + githubSrc)
+  }
+
   return (
     <div className="job-card">
       <div className="job-card-header">
@@ -11,7 +16,7 @@ export default function CardProject({ title, desc, imgSrc }: SectionModel) {
       <div className="job-card-title">{title}</div>
       <div className="job-card-subtitle">{desc}</div>
       <div className="job-card-buttons">
-        <button className="search-buttons card-buttons">查看</button>
+        <Button type="primary" onClick={openGithub}>查看</Button>
       </div>
     </div>
   );

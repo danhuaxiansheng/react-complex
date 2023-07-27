@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ColorPicker } from "antd";
 import ThemedButton from "./themedButton";
+import { AppContext } from "@/reducers/themeContext";
 
 import "./style/index.scss";
 
@@ -11,6 +13,15 @@ function SetTitle() {
 }
 
 export default function Page() {
+  const ctx = useContext(AppContext) || {};
+  const { dispatch, state } = ctx;
+  const onChange = (color) => {
+    dispatch({
+      type: "changeColor",
+      val: color.toHexString(),
+    });
+  };
+
   return (
     <div className="header">
       <SetTitle></SetTitle>
@@ -44,6 +55,12 @@ export default function Page() {
       </div>
       <div className="user-settings">
         <ThemedButton></ThemedButton>
+        <ColorPicker
+          size="small"
+          defaultValue={state.colorPrimary}
+          onChange={onChange}
+          showText
+        />
       </div>
     </div>
   );

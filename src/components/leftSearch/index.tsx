@@ -1,19 +1,19 @@
 
 import { useContext } from "react";
-import { filterTypeGroup } from "@/components/LeftSearch/type";
-
-import Checkbox from "@/components/CheckBox";
+import { filterTypeGroup } from "./type";
+import { Checkbox } from 'antd';
+// import Checkbox from "@/components/CheckBox";
 import { ConditionContext } from "@/reducers/conditionContext";
 
 import "./style/index.scss";
+import { CheckboxChangeEvent } from "antd/es/checkbox";
 
 const LeftSearch = ({ options }: {
   options: Array<filterTypeGroup>
 }) => {
   const { dispatch } = useContext(ConditionContext);
-
-  const handleChange = (id: any, checked: boolean) => {
-    dispatch({ type: checked ? "added" : "deleted", id });
+  const onChange = (e: CheckboxChangeEvent, label: string) => {
+    dispatch({ checked: e.target.checked, label });
   };
 
   return (
@@ -25,13 +25,7 @@ const LeftSearch = ({ options }: {
           <div className="job-wrapper">
             {option.children.map((item) => (
               <div className="checkbox-group" key={item.label}>
-                <Checkbox
-                  label={item.label}
-                  checked={item.checked}
-                  className={item.className}
-                  value={item.value}
-                  onChange={handleChange}
-                />
+                <Checkbox onChange={(e: CheckboxChangeEvent) => onChange(e, item.label)} checked={item.checked}>{item.label}</Checkbox>
                 <span className="job-number">{item.count}</span>
               </div>
             ))}

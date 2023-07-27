@@ -57,7 +57,8 @@ export const data: Array<any> = [
   {
     label: "PDF压缩",
     describe: "用于PDF文件压缩，可以自定义压缩比例",
-    tags: ["文档处理", "pdf"]
+    tags: ["文档处理", "pdf"],
+    url: "http://localhost:3000"
   },
   {
     label: "其他1",

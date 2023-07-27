@@ -1,6 +1,9 @@
 import "./style/index.scss";
 import { Tag } from "antd";
-export default function Card({ label, describe, tags }) {
+export default function Card({ label, describe, tags, url }) {
+  const openDetails = () => {
+    window.open(url);
+  };
   return (
     <div className="job-card">
       <div className="job-card-header">
@@ -30,8 +33,9 @@ export default function Card({ label, describe, tags }) {
         ))}
       </div>
       <div className="job-card-buttons">
-        <button className="search-buttons card-buttons">查看</button>
-        <button className="search-buttons card-buttons-msg">Messages</button>
+        <button className="search-buttons card-buttons" onClick={openDetails}>
+          查看
+        </button>
       </div>
     </div>
   );

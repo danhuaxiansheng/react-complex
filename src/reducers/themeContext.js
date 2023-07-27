@@ -2,15 +2,23 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  theme: "light",
+  theme: localStorage.getItem("theme") ?? "light",
+  colorPrimary: localStorage.getItem("colorPrimary") ?? "#0162ff"
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case "changeTheme":
+      localStorage.setItem("theme", action.val)
       return {
         ...state,
         theme: action.val,
+      };
+    case "changeColor":
+      localStorage.setItem("colorPrimary", action.val)
+      return {
+        ...state,
+        colorPrimary: action.val,
       };
     default:
       return state;

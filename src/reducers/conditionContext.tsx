@@ -1,29 +1,37 @@
 import { ProjectType } from "@/type/BaseModel";
 import { ReactNode, createContext, useReducer, Dispatch } from "react";
 
-type ActionType = 'added' | 'deleted';
-type Action = { type: ActionType; id: number; };
-type ConditionState = number[];
+type Action = { checked: boolean; label: string; };
+type ConditionState = Array<{
+  label: string,
+  value: number,
+  checked: boolean
+}>
+
 type ConditionContextType = { state: ConditionState; dispatch: Dispatch<Action>; };
 
 export const ConditionContext = createContext<ConditionContextType>({ state: [], dispatch: () => { } });
 
-function reducer(state: number[], action: any): number[] {
-  switch (action.type) {
-    case "added":
-      if (state.includes(action.id)) {
-        return state;
-      } else {
-        return [...state, action.id];
-      }
-    case "deleted":
-      return state.filter((id: any) => id !== action.id);
-    default:
-      throw new Error(`Unknown action type: ${action.type}`);
-  }
+function reducer(state: ConditionState, action: any): ConditionState {
+  let mapState = state.map(item => {
+    return { ...item }
+  });
+  mapState.some(item => {
+    if (item.label == action.label) {
+      item.checked = action.checked
+    };
+    return item.label == action.label
+  })
+  return mapState;
 }
 
-const initialState = Object.values(ProjectType).filter((value) => typeof value === "number") as number[];
+const initialState: ConditionState = Object.values(ProjectType).filter((value) => typeof value === "string").map((d, index) => {
+  return {
+    label: d.toString(),
+    value: index,
+    checked: true
+  }
+});
 
 export const ConditionProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
