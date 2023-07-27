@@ -8,6 +8,7 @@ import { SectionModel } from "@/type/SectionModel";
 import { ProjectType } from "@/type/BaseModel";
 import { cardList, filterList } from "./data";
 
+
 const PageMain = () => {
   const { state } = useContext(ConditionContext);
   const filteredCardList = cardList.filter((card: SectionModel) => {
@@ -27,9 +28,24 @@ const PageMain = () => {
     });
     return isShow
   });
+
+  const leftFilter = filterList.map(item => {
+    return {
+      ...item,
+      children:
+        item.children.map(d => {
+          const filterItem = state.find(s => s.value === d.value);
+          return {
+            ...d,
+            checked: filterItem ? filterItem.checked : true
+          }
+        })
+    }
+  })
+
   return (
     <Layout>
-      <LeftSearch options={filterList} />
+      <LeftSearch options={leftFilter} />
       <div className="searched-jobs">
         <div className="searched-bar">
           <div className="searched-show">共 {cardList.length} 条结果</div>
