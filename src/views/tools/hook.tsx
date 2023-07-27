@@ -1,7 +1,7 @@
 import { SectionModel, SelectModel } from "@/type/SectionModel";
 import { filterTypeGroup } from "@/components/LeftSearch/type";
 
-import { ToolTypeList, FileList } from "@/type/ToolsModel";
+import { ToolTypeList, FileList, ProjectType } from "@/type/ToolsModel";
 
 export const cardList: SectionModel[] = [
   {
@@ -10,7 +10,7 @@ export const cardList: SectionModel[] = [
     previewSrc: ":3001",
     githubSrc: "Company-List/WenDao",
     imgSrc: [],
-    types: ["文档处理", "pdf"],
+    types: [ProjectType.文档处理, ProjectType.pdf],
   }];
 
 function getChildrenTypes(list: SelectModel[]) {
