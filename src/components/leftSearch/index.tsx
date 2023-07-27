@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { filterTypeGroup } from "./type";
 import { Checkbox } from 'antd';
 // import Checkbox from "@/components/CheckBox";
-import { ConditionContext } from "@/reducers/conditionContext";
+import { ConditionContext } from "@/reducers/projectPage/conditionContext";
 
 import "./style/index.scss";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
@@ -12,7 +12,7 @@ const LeftSearch = ({ options }: {
   options: Array<filterTypeGroup>
 }) => {
   const { dispatch } = useContext(ConditionContext);
-  const onChange = (e: CheckboxChangeEvent, label: string) => {
+  const onChange = (e: CheckboxChangeEvent, label: any) => {
     dispatch({ checked: e.target.checked, label });
   };
 

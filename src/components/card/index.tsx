@@ -1,8 +1,9 @@
+import { SectionModel } from "@/type/SectionModel";
 import "./style/index.scss";
 import { Tag } from "antd";
-export default function Card({ label, describe, tags, url }) {
+export default function Card(item: SectionModel) {
   const openDetails = () => {
-    window.open(url);
+    window.open(item.previewSrc);
   };
   return (
     <div className="job-card">
@@ -23,10 +24,10 @@ export default function Card({ label, describe, tags, url }) {
         </svg>
         <div className="menu-dot"></div>
       </div>
-      <div className="job-card-title">{label}</div>
-      <div className="job-card-subtitle">{describe}</div>
+      <div className="job-card-title">{item.title}</div>
+      <div className="job-card-subtitle">{item.desc}</div>
       <div className="job-detail-buttons">
-        {tags.map((item) => (
+        {item?.types?.map((item) => (
           <Tag key={item} bordered={false} className="detail-button">
             {item}
           </Tag>

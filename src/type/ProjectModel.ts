@@ -1,3 +1,5 @@
+import { SelectModel } from "./SectionModel";
+
 /*
  * @Description:
  * @Autor: zhp
@@ -36,20 +38,6 @@ export enum ProjectType {
   // 数据库
   MySql,
 }
-
-/*
- * @Description:基础下拉类型
- * @Autor: zhp
- * @Date: 2022年7月13日10点26分
- * @LastEditTime: 2022年7月13日10点26分
- */
-export interface SelectModel {
-  // 名称
-  title: string;
-  // 值
-  value: ProjectType;
-}
-
 
 /*
  * @Description:项目类型列表

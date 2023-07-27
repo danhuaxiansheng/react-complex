@@ -1,6 +1,7 @@
 import { filterTypeGroup } from "@/components/LeftSearch/type";
 import { cardList } from "./data";
-import { ProjectTypeList, PlugList, LanguageList, CssList, PackList, SelectModel } from "@/type/BaseModel";
+import { ProjectTypeList, PlugList, LanguageList, CssList, PackList } from "@/type/ProjectModel";
+import { SelectModel } from "@/type/SectionModel";
 
 function getChildrenTypes(list: SelectModel[]) {
   return list.map(item => {

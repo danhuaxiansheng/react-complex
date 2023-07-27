@@ -1,7 +1,7 @@
 
-import { SectionModel } from "@/type/SectionModel";
+import { SectionModel, SelectModel } from "@/type/SectionModel";
 import { filterTypeGroup } from "@/components/LeftSearch/type";
-import { ProjectType, ProjectTypeList, PlugList, LanguageList, CssList, PackList, SelectModel } from "@/type/BaseModel";
+import { ProjectType, ProjectTypeList, PlugList, LanguageList, CssList, PackList } from "@/type/ProjectModel";
 
 /**
  * 当前所有项目集合

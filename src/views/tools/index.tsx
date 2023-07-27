@@ -1,11 +1,13 @@
-import { useContext } from "react";
 import Layout from "@/views/layout/index";
-import CardProject from "@/components/cardProject";
 import LeftSearch from "@/components/LeftSearch/index";
-
-import { ConditionContext, ConditionProvider } from "@/reducers/projectPage/conditionContext";
+import Card from "@/components/card/index";
+import { useContext } from "react";
+import { cardList, filterList } from "./hook";
+import {
+  ConditionContext,
+  ConditionProvider,
+} from "@/reducers/toolsPage/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
-import { cardList, filterList } from "./data";
 
 const PageMain = () => {
   const { state } = useContext(ConditionContext);
@@ -16,7 +18,7 @@ const PageMain = () => {
     }
     // 检查 card.types 中的每个类型是否在 state 的筛选列表中
     const isShow = !card.types.some((type: string | number) => {
-      const filterItem = state.find(d => d.value === type);
+      const filterItem = state.find((d) => d.value === type);
       // 如果在筛选列表中找不到与当前类型相对应的项，保留该 card 对象
       if (!filterItem) {
         return false;
@@ -24,22 +26,21 @@ const PageMain = () => {
       // 根据 filterItem 的 checked 属性来决定是否保留该 card 对象
       return filterItem.checked === false;
     });
-    return isShow
+    return isShow;
   });
 
-  const leftFilter = filterList.map(item => {
+  const leftFilter = filterList.map((item) => {
     return {
       ...item,
-      children:
-        item.children.map(d => {
-          const filterItem = state.find(s => s.value === d.value);
-          return {
-            ...d,
-            checked: filterItem ? filterItem.checked : true
-          }
-        })
-    }
-  })
+      children: item.children.map((d) => {
+        const filterItem = state.find((s) => s.value === d.value);
+        return {
+          ...d,
+          checked: filterItem ? filterItem.checked : true,
+        };
+      }),
+    };
+  });
 
   return (
     <Layout>
@@ -53,8 +54,8 @@ const PageMain = () => {
           </div>
         </div>
         <div className="job-cards">
-          {filteredCardList.map((card) => (
-            <CardProject key={card.title} {...card} />
+          {filteredCardList.map((item) => (
+            <Card key={item.title} {...item}></Card>
           ))}
         </div>
       </div>

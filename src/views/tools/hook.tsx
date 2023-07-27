@@ -1,19 +1,31 @@
+import { SectionModel, SelectModel } from "@/type/SectionModel";
 import { filterTypeGroup } from "@/components/LeftSearch/type";
-import { filterList, data } from "./data";
 
-export default function Hook() {
-  const toolsFilterList = filterList.map((filter: filterTypeGroup): filterTypeGroup => {
+import { ToolTypeList, FileList } from "@/type/ToolsModel";
+
+export const cardList: SectionModel[] = [
+  {
+    title: "PDF压缩",
+    desc: "用于PDF文件压缩，可以自定义压缩比例",
+    previewSrc: ":3001",
+    githubSrc: "Company-List/WenDao",
+    imgSrc: [],
+    types: ["文档处理", "pdf"],
+  }];
+
+function getChildrenTypes(list: SelectModel[]) {
+  return list.map(item => {
     return {
-      label: filter.label,
-      children: filter.children.map(item => {
-        item.count = data.filter(d => d.tags.includes(item.label)).length;
-        return item;
-      })
+      label: item.title,
+      value: item.value,
+      count: cardList.filter(card => card.types?.includes(item.value)).length,
+      checked: true,
     }
   })
-
-  return {
-    toolsFilterList,
-    data
-  };
 }
+
+export const filterList: Array<filterTypeGroup> = [
+  { label: "办公工具", children: getChildrenTypes(ToolTypeList) },
+  { label: "文件类型", children: getChildrenTypes(FileList) },
+];
+

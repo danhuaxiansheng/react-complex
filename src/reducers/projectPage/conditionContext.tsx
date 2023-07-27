@@ -1,4 +1,4 @@
-import { ProjectType } from "@/type/BaseModel";
+import { ProjectType } from "@/type/ProjectModel";
 import { ReactNode, createContext, useReducer, Dispatch } from "react";
 
 type Action = { checked: boolean; label: string; };

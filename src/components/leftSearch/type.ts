@@ -1,8 +1,8 @@
 export type filterType = {
-  label: string;
+  label: string | number;
   count: number;
   checked: boolean;
-  value?: number;
+  value?: string | number;
   id?: string;
   className?: string;
 }
