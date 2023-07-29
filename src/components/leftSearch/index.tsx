@@ -4,9 +4,8 @@ import { filterTypeGroup } from "./type";
 import { Checkbox } from 'antd';
 // import Checkbox from "@/components/CheckBox";
 import { ConditionContext } from "@/reducers/projectPage/conditionContext";
-
-import "./style/index.scss";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
+import "./style/index.scss";
 
 const LeftSearch = ({ options }: {
   options: Array<filterTypeGroup>
