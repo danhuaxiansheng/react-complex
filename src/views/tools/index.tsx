@@ -8,10 +8,11 @@ import {
   ConditionProvider,
 } from "@/reducers/toolsPage/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
+import { filterTypeGroup } from "@/components/LeftSearch/type";
 
-const PageMain = () => {
+const PageMain = ({ dataList, searchList }: { dataList: SectionModel[], searchList: filterTypeGroup[] }) => {
   const { state } = useContext(ConditionContext);
-  const filteredCardList = cardList.filter((card: SectionModel) => {
+  const filteredDataList = dataList.filter((card: SectionModel) => {
     if (!card.types || card.types.length === 0) {
       // 如果 card.types 不存在或为空数组，则保留该 card 对象
       return true;
@@ -29,18 +30,13 @@ const PageMain = () => {
     return isShow;
   });
 
-  const leftFilter = filterList.map((item) => {
-    return {
-      ...item,
-      children: item.children.map((d) => {
-        const filterItem = state.find((s) => s.value === d.value);
-        return {
-          ...d,
-          checked: filterItem ? filterItem.checked : true,
-        };
-      }),
-    };
-  });
+  const leftFilter = searchList.map((item) => ({
+    ...item,
+    children: item.children.map((d) => ({
+      ...d,
+      checked: state.find((s) => s.value === d.value)?.checked ?? true,
+    })),
+  }));
 
   return (
     <Layout>
@@ -54,8 +50,8 @@ const PageMain = () => {
           </div>
         </div>
         <div className="job-cards">
-          {filteredCardList.map((item) => (
-            <Card key={item.title} {...item}></Card>
+          {filteredDataList.map((item) => (
+            <Card key={item.title} {...item} />
           ))}
         </div>
       </div>
@@ -66,7 +62,7 @@ const PageMain = () => {
 export default function Page() {
   return (
     <ConditionProvider>
-      <PageMain></PageMain>
+      <PageMain dataList={cardList} searchList={filterList} />
     </ConditionProvider>
   );
 }

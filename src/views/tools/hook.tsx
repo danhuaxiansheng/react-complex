@@ -11,21 +11,19 @@ export const cardList: SectionModel[] = [
     githubSrc: "Company-List/WenDao",
     imgSrc: [],
     types: [ProjectType.文档处理, ProjectType.pdf],
-  }];
+  },
+];
 
 function getChildrenTypes(list: SelectModel[]) {
-  return list.map(item => {
-    return {
-      label: item.title,
-      value: item.value,
-      count: cardList.filter(card => card.types?.includes(item.value)).length,
-      checked: true,
-    }
-  })
+  return list.map(item => ({
+    label: item.title,
+    value: item.value,
+    count: cardList.filter(card => card.types?.includes(item.value)).length,
+    checked: true,
+  }));
 }
 
 export const filterList: Array<filterTypeGroup> = [
   { label: "办公工具", children: getChildrenTypes(ToolTypeList) },
   { label: "文件类型", children: getChildrenTypes(FileList) },
 ];
-
