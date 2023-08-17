@@ -12,9 +12,9 @@ const ThemedButton = React.memo(() => {
   };
   return (
     <>
-      <div className="dark-light" onClick={changeTheme}>
+      <div className="theme-btn" onClick={changeTheme}>
         <svg
-          viewBox="0 0 24 24"
+          viewBox="0 0 24 22"
           stroke="currentColor"
           fill="none"
           strokeLinecap="round"

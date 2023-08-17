@@ -24,21 +24,22 @@
 
 /** 暗黑模式 */
 .dark-mode {
-  --body-bg-color: #1d1d1d;
-  --theme-bg-color: #13131a;
-  --header-bg-color: #1c1c24;
+  --body-bg-color: rgb(31 41 55/1);
+  --theme-bg-color: rgb(31 41 55/1);
+  --header-bg-color: rgb(51 65 85/1);
   --alert-bg-color: #292932;
   --body-color: #fff;
   --inactive-color: #292932;
   --time-button: #fff;
   --level-button: #fff;
+  --subtitle-color: #fff; // checkbox 文本颜色
   --active-light-color: #263d63;
   --border-color: #26262f;
   --search-border-color: #26262f;
 }
 
 .dark-mode {
-  .dark-light svg {
+  .theme-btn svg {
     fill: #ffce45;
     stroke: #ffce45;
   }
@@ -69,7 +70,7 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-body {
+#root > div {
   background-color: var(--body-bg-color);
   font-family: var(--body-font);
   font-size: 15px;
@@ -104,3 +105,5 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(144, 147, 153, 0.3);
 }
+
+@import url(./style/antReset.scss);

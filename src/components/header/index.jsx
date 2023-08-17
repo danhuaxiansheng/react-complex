@@ -1,9 +1,10 @@
 import { useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { ColorPicker } from "antd";
+// import { ColorPicker } from "antd";
 import ThemedButton from "./themedButton";
 import { AppContext } from "@/reducers/themeContext";
-
+import { GithubOutlined } from "@ant-design/icons";
+import { Button, Space } from "antd";
 import "./style/index.scss";
 
 function SetTitle() {
@@ -15,11 +16,15 @@ function SetTitle() {
 export default function Page() {
   const ctx = useContext(AppContext) || {};
   const { dispatch, state } = ctx;
-  const onChange = (color) => {
-    dispatch({
-      type: "changeColor",
-      val: color.toHexString(),
-    });
+  // const onChange = (color) => {
+  //   dispatch({
+  //     type: "changeColor",
+  //     val: color.toHexString(),
+  //   });
+  // };
+
+  const openGithub = () => {
+    window.open("https://github.com/danhuaxiansheng");
   };
 
   return (
@@ -51,16 +56,23 @@ export default function Page() {
       <div className="header-menu">
         <NavLink to="/">工具库</NavLink>
         <NavLink to="/project">项目集</NavLink>
-        <NavLink to="/components">组件库</NavLink>
+        {/* <NavLink to="/components">组件库</NavLink> */}
       </div>
       <div className="user-settings">
-        <ThemedButton></ThemedButton>
-        <ColorPicker
+        <Space size={18}>
+          <GithubOutlined
+            style={{ fontSize: "24px" }}
+            onClick={openGithub}
+            title="查看github"
+          />
+          <ThemedButton title="换肤"></ThemedButton>
+        </Space>
+        {/* <ColorPicker
           size="small"
           defaultValue={state.colorPrimary}
           onChange={onChange}
           showText
-        />
+        /> */}
       </div>
     </div>
   );
