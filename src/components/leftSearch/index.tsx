@@ -2,15 +2,14 @@
 import { useContext } from "react";
 import { filterTypeGroup } from "./type";
 import { Checkbox } from 'antd';
-// import Checkbox from "@/components/CheckBox";
-import { ConditionContext } from "@/reducers/projectPage/conditionContext";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 import "./style/index.scss";
 
-const LeftSearch = ({ options }: {
-  options: Array<filterTypeGroup>
+const LeftSearch = ({ options, context }: {
+  options: Array<filterTypeGroup>,
+  context: React.Context<any>
 }) => {
-  const { dispatch } = useContext(ConditionContext);
+  const { dispatch } = useContext(context);
   const onChange = (e: CheckboxChangeEvent, label: any) => {
     dispatch({ checked: e.target.checked, label });
   };

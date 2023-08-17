@@ -1,4 +1,4 @@
-import { useContext, useMemo, useEffect } from "react";
+import { useContext, useMemo } from "react";
 import Layout from "@/views/layout/index";
 import CardProject from "@/components/cardProject";
 import LeftSearch from "@/components/LeftSearch/index";
@@ -43,7 +43,7 @@ const PageMain = () => {
 
   return (
     <Layout>
-      <LeftSearch options={leftFilter} />
+      <LeftSearch options={leftFilter} context={ConditionContext} />
       <div className="searched-jobs">
         <div className="searched-bar">
           <div className="searched-show">共 {filteredCardList.length} 条结果</div>

@@ -1,56 +1,59 @@
 import Layout from "@/views/layout/index";
 import LeftSearch from "@/components/LeftSearch/index";
 import Card from "@/components/card/index";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { cardList, filterList } from "./hook";
 import {
   ConditionContext,
   ConditionProvider,
 } from "@/reducers/toolsPage/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
-import { filterTypeGroup } from "@/components/LeftSearch/type";
 
-const PageMain = ({ dataList, searchList }: { dataList: SectionModel[], searchList: filterTypeGroup[] }) => {
+const PageMain = () => {
   const { state } = useContext(ConditionContext);
-  const filteredDataList = dataList.filter((card: SectionModel) => {
-    if (!card.types || card.types.length === 0) {
-      // 如果 card.types 不存在或为空数组，则保留该 card 对象
-      return true;
-    }
-    // 检查 card.types 中的每个类型是否在 state 的筛选列表中
-    const isShow = !card.types.some((type: string | number) => {
-      const filterItem = state.find((d) => d.value === type);
-      // 如果在筛选列表中找不到与当前类型相对应的项，保留该 card 对象
-      if (!filterItem) {
-        return false;
+  const filteredCardList = useMemo(() => {
+    return cardList.filter((card: SectionModel) => {
+      if (!card.types || card.types.length === 0) {
+        return true;
       }
-      // 根据 filterItem 的 checked 属性来决定是否保留该 card 对象
-      return filterItem.checked === false;
+      const isShow = !card.types.some((type: string | number) => {
+        const filterItem = state.find(d => d.value === type);
+        if (!filterItem) {
+          return false;
+        }
+        return filterItem.checked === false;
+      });
+      return isShow;
     });
-    return isShow;
-  });
+  }, [state]);
 
-  const leftFilter = searchList.map((item) => ({
-    ...item,
-    children: item.children.map((d) => ({
-      ...d,
-      checked: state.find((s) => s.value === d.value)?.checked ?? true,
-    })),
-  }));
-
+  const leftFilter = useMemo(() => {
+    return filterList.map(item => {
+      return {
+        ...item,
+        children: item.children.map(d => {
+          const filterItem = state.find(s => s.value === d.value);
+          return {
+            ...d,
+            checked: filterItem ? filterItem.checked : true
+          }
+        })
+      };
+    });
+  }, [state]);
   return (
     <Layout>
-      <LeftSearch options={leftFilter} />
+      <LeftSearch options={leftFilter} context={ConditionContext} />
       <div className="searched-jobs">
         <div className="searched-bar">
-          <div className="searched-show">共 {cardList.length} 条结果</div>
+          <div className="searched-show">共 {filteredCardList.length} 条结果</div>
           <div className="searched-sort">
             排序: <span className="post-time">最新发布</span>
             <span className="menu-icon">▼</span>
           </div>
         </div>
         <div className="job-cards">
-          {filteredDataList.map((item) => (
+          {filteredCardList.map((item) => (
             <Card key={item.title} {...item} />
           ))}
         </div>
@@ -62,7 +65,7 @@ const PageMain = ({ dataList, searchList }: { dataList: SectionModel[], searchLi
 export default function Page() {
   return (
     <ConditionProvider>
-      <PageMain dataList={cardList} searchList={filterList} />
+      <PageMain></PageMain>
     </ConditionProvider>
   );
 }
