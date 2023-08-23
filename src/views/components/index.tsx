@@ -1,32 +1,71 @@
 import Layout from "@/views/layout/index";
-
-
+import LeftSearch from "@/components/LeftSearch/index";
+import IframeCard from "@/components/iframeCard/index";
+import { useContext, useMemo } from "react";
+import { cardList, filterList } from "./hook";
+import {
+  ConditionContext,
+  ConditionProvider,
+} from "@/reducers/toolsPage/conditionContext";
+import { SectionModel } from "@/type/SectionModel";
 
 const PageMain = () => {
-  const list = ["办公自动化原理及应用.pdf",
-    "管理系统中计算机应用.pdf",
-    "马克思主义基本原理概论.pdf",
-    "信息经济学.pdf",
-    "信息系统开发.pdf",
-    "中国近现代史纲要.pdf"];
+  const { state } = useContext(ConditionContext);
+  const filteredCardList = useMemo(() => {
+    return cardList.filter((card: SectionModel) => {
+      if (!card.types || card.types.length === 0) {
+        return true;
+      }
+      const isShow = !card.types.some((type: string | number) => {
+        const filterItem = state.find(d => d.value === type);
+        if (!filterItem) {
+          return false;
+        }
+        return filterItem.checked === false;
+      });
+      return isShow;
+    });
+  }, [state]);
 
-  function handleClick(key: string) {
-
-    window.open('./')
-  }
-
-
+  const leftFilter = useMemo(() => {
+    return filterList.map(item => {
+      return {
+        ...item,
+        children: item.children.map(d => {
+          const filterItem = state.find(s => s.value === d.value);
+          return {
+            ...d,
+            checked: filterItem ? filterItem.checked : true
+          }
+        })
+      };
+    });
+  }, [state]);
   return (
     <Layout>
-      {list.map(d => {
-        return <a href={"/file/" + d} target="_blank">{d}</a>
-      })}
+      <LeftSearch options={leftFilter} context={ConditionContext} />
+      <div className="searched-jobs">
+        <div className="searched-bar">
+          <div className="searched-show">共 {filteredCardList.length} 条结果</div>
+          <div className="searched-sort">
+            排序: <span className="post-time">最新发布</span>
+            <span className="menu-icon">▼</span>
+          </div>
+        </div>
+        <div className="preview-cards">
+          {filteredCardList.map((item) => (
+            <IframeCard key={item.title} {...item} />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 };
 
 export default function Page() {
   return (
-    <PageMain></PageMain>
+    <ConditionProvider>
+      <PageMain></PageMain>
+    </ConditionProvider>
   );
 }

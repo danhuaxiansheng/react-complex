@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import ThemedButton from "./themedButton";
 import { AppContext } from "@/reducers/themeContext";
 import { GithubOutlined } from "@ant-design/icons";
-import { Button, Space } from "antd";
+import { Space } from "antd";
 import "./style/index.scss";
 
 function SetTitle() {
@@ -56,7 +56,7 @@ export default function Page() {
       <div className="header-menu">
         <NavLink to="/">工具库</NavLink>
         <NavLink to="/project">项目集</NavLink>
-        {/* <NavLink to="/components">组件库</NavLink> */}
+        <NavLink to="/components">组件库</NavLink>
       </div>
       <div className="user-settings">
         <Space size={18}>

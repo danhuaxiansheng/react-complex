@@ -30,7 +30,7 @@ function Main() {
         <Routes>
           <Route path="/" element={<ToolsPage />} />
           <Route path="/project" element={<ProjectPage />} />
-          <Route path="/components" element={<ProjectPage />} />
+          <Route path="/components" element={<ComponentsPage />} />
         </Routes>
       </main>
       <footer style={{ display: "none" }}>
