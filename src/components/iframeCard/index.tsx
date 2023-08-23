@@ -12,7 +12,7 @@ export default function Card({ title, desc, imgSrc, previewSrc, githubSrc, types
           <iframe src={previewSrc} frameBorder="0" loading="lazy" scrolling="no" className="iframe-item"></iframe>
         </div>
         <div className="bottom-item">
-          <a href={previewSrc} target="_blank"> 3D卡片</a>
+          <a href={previewSrc} target="_blank">{title}</a>
         </div>
       </article>
     </div>

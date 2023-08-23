@@ -55,6 +55,7 @@
 .main-container {
   display: flex;
   flex-grow: 1;
+  height: 100%;
 }
 
 .search-buttons {
@@ -97,6 +98,13 @@
   flex-direction: column;
   flex-grow: 1;
   padding-left: 40px;
+  overflow: auto;
+  /* Hide default scrollbars */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
 }
 
 @keyframes slideY {
