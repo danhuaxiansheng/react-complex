@@ -2,6 +2,7 @@ import { useContext, useMemo } from "react";
 import Layout from "@/views/layout/index";
 import CardProject from "@/components/cardProject";
 import LeftSearch from "@/components/LeftSearch/index";
+import IframeCard from "@/components/iframeCard/index";
 
 import { ConditionContext, ConditionProvider } from "@/reducers/projectPage/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
@@ -53,9 +54,10 @@ const PageMain = () => {
           </div>
         </div>
         <div className="job-cards">
-          {filteredCardList.map((card) => (
-            <CardProject key={card.title} {...card} />
-          ))}
+          {filteredCardList.map((item) => item.previewSrc ?
+            (<IframeCard key={item.title} {...item} />) :
+            (<CardProject key={item.title} {...item} />)
+          )}
         </div>
       </div>
     </Layout>
