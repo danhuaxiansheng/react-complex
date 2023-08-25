@@ -77,6 +77,15 @@ export const cardList: SectionModel[] = [
     types: [ProjectType.文档处理, ProjectType.pdf],
   },
   {
+    title: "上传弹出框",
+    desc: "用于PDF文件压缩，可以自定义压缩比例",
+    previewSrc: "http://47.109.85.136:3333/Upload-Modal/index.html",
+    githubSrc: "Company-List/WenDao",
+    imgSrc: [],
+    types: [ProjectType.文档处理, ProjectType.pdf],
+  },
+
+  {
     title: "渐变文字",
     desc: "用于PDF文件压缩，可以自定义压缩比例",
     previewSrc: "http://47.109.85.136:3333/The-Aurora/index.html",
