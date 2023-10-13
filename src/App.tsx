@@ -10,9 +10,8 @@ import Header from "@/components/header/index";
 import Footer from "@/components/footer/index";
 import ToolsPage from "@/views/tools/index";
 import ProjectPage from "@/views/project/index";
+import Article from "@/views/article/index";
 import ComponentsPage from "@/views/components/index";
-
-
 import { AppProvider, AppContext } from "@/reducers/themeContext";
 
 function Main() {
@@ -31,6 +30,7 @@ function Main() {
           <Route path="/" element={<ToolsPage />} />
           <Route path="/project" element={<ProjectPage />} />
           <Route path="/components" element={<ComponentsPage />} />
+          <Route path="/article" element={<Article />} />
         </Routes>
       </main>
       <footer style={{ display: "none" }}>

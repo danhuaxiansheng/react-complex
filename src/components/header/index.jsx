@@ -57,6 +57,7 @@ export default function Page() {
         <NavLink to="/">工具库</NavLink>
         <NavLink to="/project">项目集</NavLink>
         <NavLink to="/components">组件库</NavLink>
+        <NavLink to="/article">文章</NavLink>
       </div>
       <div className="user-settings">
         <Space size={18}>
