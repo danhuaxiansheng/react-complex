@@ -1,10 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from 'antd'
-
-
-
-
+import { Button, Divider } from 'antd'
+import { CaretUpOutlined, CaretDownOutlined, AliwangwangOutlined, DownOutlined } from '@ant-design/icons';
 
 import './style/articleList.scss';
 interface Article {
@@ -38,19 +34,18 @@ const ArticleList: React.FC<Props> = ({ articles, onArticleClick }) => {
                       {article.summary}
                     </span>
                   </div>
-                  <Button type="text" className='contentItem-more'>阅读全文</Button>
+                  <Button type="text" className='contentItem-more'>阅读全文<DownOutlined /></Button>
                 </div>
               </span>
-
               <div className='contentItem-actions'>
                 <span>
-                  <Button className='button voteButton'>赞同 406</Button>
-                  <Button className='button voteButton'>反对</Button>
+                  <Button icon={<CaretUpOutlined />} className='voteButton' >赞同 406</Button>
+                  <Button icon={<CaretDownOutlined />} className='voteButton voteButton-down' />
                 </span>
+                <Button type="text" icon={<AliwangwangOutlined />} className='contentItem-action' >51 条评论</Button>
               </div>
             </div>
-
-            <button>评论</button>
+            <Divider />
           </li>
         ))}
       </ul>
