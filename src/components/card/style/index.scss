@@ -1,9 +1,10 @@
 .job-card {
   padding: 20px 16px;
-  background-color: var(--header-bg-color);
+  background-color: var(--theme-bg-color);
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
+  border: 1px solid var(--theme-bg-color);
   &:hover {
     transform: scale(1.02);
   }

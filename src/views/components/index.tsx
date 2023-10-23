@@ -43,19 +43,21 @@ const PageMain = () => {
   }, [state]);
   return (
     <Layout>
-      <LeftSearch options={leftFilter} context={ConditionContext} />
-      <div className="searched-jobs">
-        <div className="searched-bar">
-          <div className="searched-show">共 {filteredCardList.length} 条结果</div>
-          <div className="searched-sort">
-            排序: <span className="post-time">最新发布</span>
-            <span className="menu-icon">▼</span>
+      <div className="search-content-container">
+        <LeftSearch options={leftFilter} context={ConditionContext} />
+        <div className="searched-jobs">
+          <div className="searched-bar">
+            <div className="searched-show">共 {filteredCardList.length} 条结果</div>
+            <div className="searched-sort">
+              排序: <span className="post-time">最新发布</span>
+              <span className="menu-icon">▼</span>
+            </div>
           </div>
-        </div>
-        <div className="preview-cards">
-          {filteredCardList.map((item) => (
-            <IframeCard key={item.title} {...item} />
-          ))}
+          <div className="preview-cards">
+            {filteredCardList.map((item) => (
+              <IframeCard key={item.title} {...item} />
+            ))}
+          </div>
         </div>
       </div>
     </Layout>

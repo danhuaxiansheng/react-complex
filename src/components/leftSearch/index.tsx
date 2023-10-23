@@ -16,7 +16,6 @@ const LeftSearch = ({ options, context }: {
 
   return (
     <div className="search-type">
-      <div className="search-header">过滤</div>
       {options.map((option) => (
         <div className="job-time" key={option.label}>
           <div className="job-time-title">{option.label}</div>

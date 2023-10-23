@@ -21,11 +21,7 @@ const handleArticleClick = (id: number) => {
 };
 
 const PageMain = () => {
-  return (
-    <Layout>
-      <ArticleList articles={articles} onArticleClick={handleArticleClick} />
-    </Layout>
-  );
+  return (<Layout><ArticleList articles={articles} onArticleClick={handleArticleClick} /></Layout>);
 };
 
 export default function Page() {

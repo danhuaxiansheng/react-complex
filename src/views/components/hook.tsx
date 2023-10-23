@@ -36,14 +36,14 @@ export const cardList: SectionModel[] = [
     imgSrc: [],
     types: [ProjectType.文档处理, ProjectType.pdf],
   },
-  {
-    title: "404页面",
-    desc: "用于PDF文件压缩，可以自定义压缩比例",
-    previewSrc: "http://47.109.85.136:4000/404Page/index.html",
-    githubSrc: "Company-List/WenDao",
-    imgSrc: [],
-    types: [ProjectType.文档处理, ProjectType.pdf],
-  },
+  // {
+  //   title: "404页面",
+  //   desc: "用于PDF文件压缩，可以自定义压缩比例",
+  //   previewSrc: "http://47.109.85.136:4000/404Page/index.html",
+  //   githubSrc: "Company-List/WenDao",
+  //   imgSrc: [],
+  //   types: [ProjectType.文档处理, ProjectType.pdf],
+  // },
   {
     title: "登录模版",
     desc: "用于PDF文件压缩，可以自定义压缩比例",
