@@ -1,11 +1,14 @@
 .article-container {
   display: flex;
-  margin: 10px auto;
+  margin: 0px auto;
   padding: 19px 16px;
   position: relative;
   width: 1000px;
   color: #121212;
   background: #fff;
+  ul {
+    width: 100%;
+  }
   .contentItem-title {
     margin-bottom: -4px;
     margin-top: -4px;
