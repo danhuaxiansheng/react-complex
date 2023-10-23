@@ -6,8 +6,8 @@ export default function Card({ title, desc, imgSrc, previewSrc, githubSrc, types
     window.open(previewSrc);
   };
   return (
-    <div className="job-card">
-      <div className="job-card-header">
+    <div className="result-item">
+      <div className="result-item-header">
         <svg
           viewBox="0 -13 512 512"
           xmlns="http://www.w3.org/2000/svg"
@@ -24,17 +24,17 @@ export default function Card({ title, desc, imgSrc, previewSrc, githubSrc, types
         </svg>
         <div className="menu-dot"></div>
       </div>
-      <div className="job-card-title">{title}</div>
-      <div className="job-card-subtitle">{desc}</div>
-      <div className="job-detail-buttons">
+      <div className="result-item-title">{title}</div>
+      <div className="result-item-subtitle">{desc}</div>
+      <div className="result-tags">
         {types?.map((item) => (
-          <Tag key={item} bordered={false} className="detail-button">
+          <Tag key={item} bordered={false} className="tag-item">
             {item}
           </Tag>
         ))}
       </div>
-      <div className="job-card-buttons">
-        <button className="search-buttons card-buttons" onClick={openDetails}>
+      <div className="result-item-buttons">
+        <button className="btn card-buttons" onClick={openDetails}>
           查看
         </button>
       </div>

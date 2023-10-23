@@ -1,4 +1,4 @@
-.search-type {
+.filter-list {
   width: 270px;
   display: flex;
   flex-direction: column;
@@ -6,11 +6,11 @@
   flex-shrink: 0;
   padding: 16px;
   background: #fff;
-  .job-wrapper {
+  .filter-content {
     padding-top: 16px;
   }
 
-  .job-time {
+  .filter-item {
     margin-bottom: 16px;
   }
 }
@@ -37,14 +37,14 @@
   }
 }
 
-.job-time-title {
+.filter-title {
   font-size: 12px;
   font-weight: 500;
   color: rgb(101, 109, 118);
   text-align: left;
 }
 
-.job-number {
+.check-count {
   margin-left: auto;
   background-color: var(--inactive-color);
   color: var(--subtitle-color);

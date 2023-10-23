@@ -60,11 +60,3 @@
     }
   }
 }
-
-.preview-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 41%));
-  align-items: start;
-  justify-items: center;
-  grid-gap: 3rem 3rem;
-}

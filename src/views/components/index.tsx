@@ -45,15 +45,15 @@ const PageMain = () => {
     <Layout>
       <div className="search-content-container">
         <LeftSearch options={leftFilter} context={ConditionContext} />
-        <div className="searched-jobs">
-          <div className="searched-bar">
+        <div className="content-list">
+          <div className="result-header">
             <div className="searched-show">共 {filteredCardList.length} 条结果</div>
-            <div className="searched-sort">
+            <div className="sort-content">
               排序: <span className="post-time">最新发布</span>
               <span className="menu-icon">▼</span>
             </div>
           </div>
-          <div className="preview-cards">
+          <div className="result-content">
             {filteredCardList.map((item) => (
               <IframeCard key={item.title} {...item} />
             ))}

@@ -9,13 +9,13 @@ export default function CardProject({ title, desc, imgSrc, previewSrc, githubSrc
   }
 
   return (
-    <div className="job-card">
-      <div className="job-card-header">
+    <div className="result-item">
+      <div className="result-item-header">
         <Card3D imgSrc={imgSrc}></Card3D>
       </div>
-      <div className="job-card-title">{title}</div>
-      <div className="job-card-subtitle">{desc}</div>
-      <div className="job-card-buttons">
+      <div className="result-item-title">{title}</div>
+      <div className="result-item-subtitle">{desc}</div>
+      <div className="result-item-buttons">
         <Button type="primary" onClick={openGithub}>查看</Button>
       </div>
     </div>

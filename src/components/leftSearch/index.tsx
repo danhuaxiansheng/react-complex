@@ -15,15 +15,15 @@ const LeftSearch = ({ options, context }: {
   };
 
   return (
-    <div className="search-type">
+    <div className="filter-list">
       {options.map((option) => (
-        <div className="job-time" key={option.label}>
-          <div className="job-time-title">{option.label}</div>
-          <div className="job-wrapper">
+        <div className="filter-item" key={option.label}>
+          <div className="filter-title">{option.label}</div>
+          <div className="filter-content">
             {option.children.map((item) => (
               <div className="checkbox-group" key={item.label}>
                 <Checkbox onChange={(e: CheckboxChangeEvent) => onChange(e, item.label)} checked={item.checked}>{item.label}</Checkbox>
-                <span className="job-number">{item.count}</span>
+                <span className="check-count">{item.count}</span>
               </div>
             ))}
           </div>

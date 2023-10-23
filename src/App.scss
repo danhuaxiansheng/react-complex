@@ -43,14 +43,11 @@
     fill: #ffce45;
     stroke: #ffce45;
   }
-  .job-card svg {
-    box-shadow: none;
-  }
   .search.item {
     color: var(--body-color);
     border-color: var(--body-color);
   }
-  .detail-button {
+  .tag-item {
     background-color: var(--inactive-color);
     color: var(--subtitle-color);
   }
