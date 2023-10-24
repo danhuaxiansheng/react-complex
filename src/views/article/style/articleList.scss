@@ -26,12 +26,14 @@
       overflow: hidden;
       .richContent-inner-block {
         position: relative;
-        display: inline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
       }
-
       .contentItem-more {
         color: #175399;
-        margin-left: 4px;
         padding: 0;
         background-color: transparent;
         border: none;

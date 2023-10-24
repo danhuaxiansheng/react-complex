@@ -29,11 +29,11 @@ const ArticleList: React.FC<Props> = ({ articles, onArticleClick }) => {
             <div className='richContent is-collapsed'>
               <span>
                 <div className='richContent-inner'>
-                  <div className='richContent-inner-block'>
-                    <span className='richText'>
-                      {article.summary}
-                    </span>
-                  </div>
+                  <span className='richContent-inner-block'>
+                    {/* <span className='richText'> */}
+                    {article.summary}
+                    {/* </span> */}
+                  </span>
                   <Button type="text" className='contentItem-more'>阅读全文<DownOutlined /></Button>
                 </div>
               </span>
