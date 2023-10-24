@@ -16,7 +16,7 @@
         margin-left: 8px;
         overflow: auto;
         scrollbar-width: none;
-        background: #fff;
+        background: var(--block-bg-color);
         width: calc(100% - 270px);
         &::-webkit-scrollbar {
           display: none; /* Chrome, Safari, and Opera */
@@ -28,7 +28,7 @@
           animation: slideY 0.6s both;
           height: 45px;
           padding: 8px;
-          border-bottom: 1px solid #f5f5f5;
+          border-bottom: 1px solid var(--body-bg-color);
 
           .searched-show {
             font-size: 14px;

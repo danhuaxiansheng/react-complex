@@ -6,11 +6,12 @@
 :root {
   --body-bg-color: #e5ecef;
   --theme-bg-color: #f5f5f5;
+  --block-bg-color: #fff; // 块级内容的背景色
   --body-font: "Poppins", sans-serif;
   --body-color: #2f2f33;
   --active-color: #0162ff;
   --active-light-color: #e1ebfb;
-  --header-bg-color: #fff;
+  --header-bg-color: #fff; // 导航栏背景色
   --search-border-color: #efefef;
   --border-color: #d8d8d8;
   --alert-bg-color: #e8f2ff;
@@ -26,7 +27,9 @@
 .dark-mode {
   --body-bg-color: rgb(31 41 55/1);
   --theme-bg-color: rgb(31 41 55/1);
-  --header-bg-color: rgb(51 65 85/1);
+  --header-bg-color: rgb(51 65 85/1); // 导航栏背景色
+  --block-bg-color: rgb(51 65 85/1); // 块级内容的背景色
+
   --alert-bg-color: #292932;
   --body-color: #fff;
   --inactive-color: #292932;
