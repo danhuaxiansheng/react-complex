@@ -68,6 +68,7 @@
   }
 }
 
+// 通用按钮样式
 .btn {
   border: none;
   color: var(--button-color);
@@ -77,6 +78,14 @@
   font-size: 13px;
   font-weight: 600;
   margin-top: 14px;
+}
+
+//  统一hover样式
+.hover {
+  cursor: pointer;
+  &:hover {
+    color: #175399;
+  }
 }
 
 @keyframes slideY {

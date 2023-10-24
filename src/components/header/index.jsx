@@ -51,7 +51,7 @@ export default function Page() {
             data-original="#518ef8"
           />
         </svg>
-        AGE NET
+        HI EGG
       </div>
       <div className="header-menu">
         <NavLink to="/">工具库</NavLink>

@@ -23,7 +23,7 @@ const ArticleList: React.FC<Props> = ({ articles, onArticleClick }) => {
       <ul>
         {articles.map(article => (
           <li key={article.id}>
-            <h2 className='contentItem-title'>
+            <h2 className='contentItem-title hover'>
               <a>{article.title}</a>
             </h2>
             <div className='richContent is-collapsed'>

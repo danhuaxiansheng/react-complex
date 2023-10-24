@@ -22,9 +22,10 @@ export default function Card({ title, desc, imgSrc, previewSrc, githubSrc, types
             fill="#feb0a5"
           />
         </svg>
+        <div className="result-item-title">{title}</div>
         <div className="menu-dot"></div>
       </div>
-      <div className="result-item-title">{title}</div>
+
       <div className="result-item-subtitle">{desc}</div>
       <div className="result-tags">
         {types?.map((item) => (
