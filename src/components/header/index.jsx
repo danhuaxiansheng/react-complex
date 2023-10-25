@@ -15,7 +15,7 @@ function SetTitle() {
 
 export default function Page() {
   const ctx = useContext(AppContext) || {};
-  const { dispatch, state } = ctx;
+  // const { dispatch, state } = ctx;
   // const onChange = (color) => {
   //   dispatch({
   //     type: "changeColor",
