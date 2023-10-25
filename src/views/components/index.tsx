@@ -16,7 +16,7 @@ const PageMain = () => {
       if (!card.types || card.types.length === 0) {
         return true;
       }
-      const isShow = !card.types.some((type: string | number) => {
+      const isShow = !card.types.some((type) => {
         const filterItem = state.find(d => d.value === type);
         if (!filterItem) {
           return false;

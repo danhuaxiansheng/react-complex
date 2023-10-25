@@ -5,6 +5,7 @@ import { useContext, useMemo } from "react";
 import { cardList, filterList } from "./hook";
 import { ConditionContext, ConditionProvider } from "@/reducers/toolsPage/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
+
 const PageMain = () => {
   const { state } = useContext(ConditionContext);
   const filteredCardList = useMemo(() => {
@@ -12,8 +13,8 @@ const PageMain = () => {
       if (!card.types || card.types.length === 0) {
         return true;
       }
-      const isShow = !card.types.some((type: string | number) => {
-        const filterItem = state.find(d => d.value === type);
+      const isShow = !card.types.some((type) => {
+        const filterItem = state.find(d => d.label === type);
         if (!filterItem) {
           return false;
         }
@@ -34,7 +35,6 @@ const PageMain = () => {
       };
     });
   }, [state]);
-
   return (
     <Layout>
       <div className='search-content-container'>

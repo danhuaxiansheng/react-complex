@@ -6,7 +6,7 @@ import IframeCard from "@/components/iframeCard/index";
 
 import { ConditionContext, ConditionProvider } from "@/reducers/projectPage/conditionContext";
 import { SectionModel } from "@/type/SectionModel";
-import { cardList, filterList } from "./data";
+import { cardList, filterList } from "./hook";
 
 const PageMain = () => {
   const { state } = useContext(ConditionContext);
@@ -15,7 +15,7 @@ const PageMain = () => {
       if (!card.types || card.types.length === 0) {
         return true;
       }
-      const isShow = !card.types.some((type: string | number) => {
+      const isShow = !card.types.some((type) => {
         const filterItem = state.find(d => d.value === type);
         if (!filterItem) {
           return false;

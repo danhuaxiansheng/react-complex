@@ -1,6 +1,6 @@
 export type filterType = {
   label: string | number;
-  count: number;
+  count?: number;
   checked: boolean;
   value?: string | number;
   id?: string;

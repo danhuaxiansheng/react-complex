@@ -6,7 +6,7 @@ export default function Card({ title, desc, imgSrc, previewSrc, githubSrc, types
     window.open(previewSrc);
   };
   return (
-    <div className="result-item">
+    <div className="result-item" onClick={openDetails}>
       <div className="result-item-header">
         <svg
           viewBox="0 -13 512 512"
@@ -34,11 +34,11 @@ export default function Card({ title, desc, imgSrc, previewSrc, githubSrc, types
           </Tag>
         ))}
       </div>
-      <div className="result-item-buttons">
+      {/* <div className="result-item-buttons">
         <button className="btn card-buttons" onClick={openDetails}>
           查看
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import { SectionModel, SelectModel } from "@/type/SectionModel";
+import { SectionModel } from "@/type/SectionModel";
 import { filterTypeGroup } from "@/components/LeftSearch/type";
-
-import { ToolTypeList, FileList, ProjectType } from "@/type/ToolsModel";
+import { ToolsGroup, ProjectType } from "@/type/ToolsModel";
+import { getTypeCount } from "@/utils/utils";
 
 export const cardList: SectionModel[] = [
   {
@@ -102,17 +102,4 @@ export const cardList: SectionModel[] = [
     types: [ProjectType.文档处理, ProjectType.pdf],
   },
 ];
-
-function getChildrenTypes(list: SelectModel[]) {
-  return list.map(item => ({
-    label: item.title,
-    value: item.value,
-    count: cardList.filter(card => card.types?.includes(item.value)).length,
-    checked: true,
-  }));
-}
-
-export const filterList: Array<filterTypeGroup> = [
-  { label: "办公工具", children: getChildrenTypes(ToolTypeList) },
-  { label: "文件类型", children: getChildrenTypes(FileList) },
-];
+export const filterList: Array<filterTypeGroup> = getTypeCount(ToolsGroup, cardList);

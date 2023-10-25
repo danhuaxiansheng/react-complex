@@ -1,18 +1,13 @@
+import { filterType } from "@/components/LeftSearch/type";
 import { ProjectType } from "@/type/ToolsModel";
 import { ReactNode, createContext, useReducer, Dispatch } from "react";
 
 type Action = { checked: boolean; label: string; };
-type ConditionState = Array<{
-  label: string,
-  value: number,
-  checked: boolean
-}>
-
-type ConditionContextType = { state: ConditionState; dispatch: Dispatch<Action>; };
+type ConditionContextType = { state: filterType[]; dispatch: Dispatch<Action>; };
 
 export const ConditionContext = createContext<ConditionContextType>({ state: [], dispatch: () => { } });
 
-function reducer(state: ConditionState, action: any): ConditionState {
+function reducer(state: filterType[], action: any): filterType[] {
   let mapState = state.map(item => {
     return { ...item }
   });
@@ -25,11 +20,11 @@ function reducer(state: ConditionState, action: any): ConditionState {
   return mapState;
 }
 
-const initialState: ConditionState = Object.values(ProjectType).filter((value) => typeof value === "string").map((d, index) => {
+const initialState: filterType[] = Object.values(ProjectType).filter((value) => typeof value === "string").map((d, index) => {
   return {
     label: d.toString(),
     value: index,
-    checked: true
+    checked: true,
   }
 });
 

@@ -1,3 +1,5 @@
+import { filterType } from "@/components/LeftSearch/type";
+
 /*
  * @Description:
  * @Autor: zhp
@@ -10,7 +12,7 @@ export interface SectionModel {
   // 描述
   desc?: string;
   // 项目类型
-  types?: Array<number | string>;
+  types?: Array<filterType['label']>;
   // 预览地址
   previewSrc?: string;
   // 图片途径
