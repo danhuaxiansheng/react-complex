@@ -41,7 +41,7 @@ const PageMain = () => {
     });
   }, [state]);
 
-
+  const style = { '--num-columns': 3 } as any;
   return (
     <Layout>
       <div className="search-content-container">
@@ -54,7 +54,7 @@ const PageMain = () => {
               <span className="menu-icon">▼</span>
             </div>
           </div>
-          <div className="result-content">
+          <div className="result-content" style={style}>
             {filteredCardList.map((item) => item.previewSrc ?
               (<IframeCard key={item.title} {...item} />) :
               (<CardProject key={item.title} {...item} />)

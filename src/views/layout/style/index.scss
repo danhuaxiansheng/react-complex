@@ -18,14 +18,18 @@
         scrollbar-width: none;
         background: var(--block-bg-color);
         width: calc(100% - 270px);
+
+        --num-columns: 4; // result-content 一行子元素数量
+
         &::-webkit-scrollbar {
           display: none; /* Chrome, Safari, and Opera */
         }
+
         .result-header {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          animation: slideY 0.6s both;
+          animation: slideY 0.4s both;
           height: 45px;
           padding: 8px;
           border-bottom: 1px solid var(--body-bg-color);
@@ -49,12 +53,15 @@
             }
           }
         }
+
         .result-content {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+
+          grid-template-columns: repeat(var(--num-columns, 4), 1fr);
+          // grid-template-columns: repeat(4, 1fr);
           grid-column-gap: 16px;
           grid-row-gap: 16px;
-          animation: slideY 0.6s both;
+          animation: slideY 0.4s both;
           padding: 16px;
           @media screen and (max-width: 1440px) {
             grid-template-columns: repeat(3, 1fr);
@@ -65,6 +72,9 @@
           @media screen and (max-width: 930px) {
             grid-template-columns: repeat(1, 1fr);
           }
+        }
+        .columns-count {
+          grid-template-columns: repeat(4, 1fr);
         }
       }
     }
@@ -92,13 +102,15 @@
   }
 }
 
+// Y轴 动画效果
 @keyframes slideY {
   0% {
     opacity: 0;
-    transform: translateY(200px);
+    transform: translateY(100px);
   }
 }
 
+//  标签样式
 .tag-item {
   background-color: var(--active-light-color);
   color: var(--active-color);
