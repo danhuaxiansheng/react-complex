@@ -48,7 +48,7 @@ const Carousel = ({ children }: { children: ReactNode }) => {
 export default function Page({ imgSrc }: SectionModel) {
   return (
     <Carousel>
-      {imgSrc.map((src) => (<div className='card' key={src}><img src={requireImage(src)} /></div>))}
+      {imgSrc?.map((src) => (<div className='card' key={src}><img src={requireImage(src)} /></div>))}
     </Carousel>
   );
 }

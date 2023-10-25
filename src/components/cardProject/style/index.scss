@@ -17,17 +17,12 @@
   }
   .result-item-header {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     .result-item-title {
       font-weight: 600;
       font-size: 14px;
       margin-left: 8px;
-    }
-    svg {
-      width: 33px;
-      padding: 6px;
-      border-radius: 24px;
     }
   }
 

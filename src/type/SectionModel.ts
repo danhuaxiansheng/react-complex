@@ -15,8 +15,10 @@ export interface SectionModel {
   types?: Array<filterType['label']>;
   // 预览地址
   previewSrc?: string;
+  // 图片
+  icon?: JSX.Element;
   // 图片途径
-  imgSrc: Array<string>;
+  imgSrc?: Array<string>;
   // github地址
   githubSrc?: string;
 }
