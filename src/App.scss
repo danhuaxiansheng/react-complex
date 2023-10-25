@@ -15,8 +15,7 @@
   --search-border-color: #efefef;
   --border-color: #d8d8d8;
   --alert-bg-color: #e8f2ff;
-  --subtitle-color: #83838e;
-  --inactive-color: #f0f0f0;
+  --subtitle-color: #1f2328;
   --placeholder-color: #9b9ba5;
   --time-button: #fc5757;
   --level-button: #5052d5;
@@ -32,7 +31,6 @@
 
   --alert-bg-color: #292932;
   --body-color: #fff;
-  --inactive-color: #292932;
   --time-button: #fff;
   --level-button: #fff;
   --subtitle-color: #fff; // checkbox 文本颜色
@@ -45,14 +43,6 @@
   .theme-btn svg {
     fill: #ffce45;
     stroke: #ffce45;
-  }
-  .search.item {
-    color: var(--body-color);
-    border-color: var(--body-color);
-  }
-  .tag-item {
-    background-color: var(--inactive-color);
-    color: var(--subtitle-color);
   }
 }
 /** 暗黑模式 */

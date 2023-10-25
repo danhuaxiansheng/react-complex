@@ -24,7 +24,6 @@
 .checkbox-group {
   display: flex;
   align-items: center;
-  color: var(--subtitle-color);
   font-size: 13px;
   label {
     margin-left: 2px;
@@ -47,10 +46,11 @@
 
 .check-count {
   margin-left: auto;
-  background-color: var(--inactive-color);
+  background-color: var(--theme-bg-color);
   color: var(--subtitle-color);
   font-size: 10px;
   font-weight: 500;
-  padding: 5px;
-  border-radius: 4px;
+  padding: 5px 8px;
+  border-radius: 50%;
+  font-weight: 600;
 }

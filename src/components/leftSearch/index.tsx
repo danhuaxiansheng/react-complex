@@ -22,7 +22,7 @@ const LeftSearch = ({ options, context }: {
           <div className="filter-content">
             {option.children.map((item) => (
               <div className="checkbox-group" key={item.label}>
-                <Checkbox onChange={(e: CheckboxChangeEvent) => onChange(e, item.label)} checked={item.checked}>{item.label}</Checkbox>
+                <Checkbox className="hover" onChange={(e: CheckboxChangeEvent) => onChange(e, item.label)} checked={item.checked}>{item.label}</Checkbox>
                 <span className="check-count">{item.count}</span>
               </div>
             ))}
