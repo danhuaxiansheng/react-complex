@@ -19,10 +19,10 @@ export const cardList: SectionModel[] = [
     types: [ProjectType[ProjectType.图像处理], ProjectType[ProjectType.gif]],
   },
   {
-    title: "图片剪辑",
-    desc: "图像调整、格式转换、压缩",
+    title: "图片调整",
+    desc: "格式转换、文件压缩",
     icon: <FileImageOutlined style={{ fontSize: '26px', color: '#eb2f96' }} />,
-    previewSrc: "https://new.express.adobe.com/",
+    previewSrc: "https://squoosh.app/",
     types: [ProjectType[ProjectType.图像处理], ProjectType[ProjectType.img]],
   },
   // {
