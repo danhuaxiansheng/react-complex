@@ -7,7 +7,7 @@ export default function Card({ title, desc, icon, previewSrc, types }: SectionMo
   };
   return (
     <div className="result-item" onClick={openDetails}>
-      <div className="result-item-header">
+      <div className="result-item-header" style={{ 'justifyContent': 'left' }}>
         {icon}
         <div className="result-item-title">{title}</div>
         {/* <div className="menu-dot"></div> */}
