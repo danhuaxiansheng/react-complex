@@ -1,4 +1,4 @@
-.result-item {
+.tools-item {
   padding: 20px 16px;
   background-color: var(--theme-bg-color);
   border-radius: 8px;
@@ -8,25 +8,16 @@
   &:hover {
     transform: scale(1.02);
   }
-
   &-subtitle {
     color: var(--subtitle-color);
     font-size: 13px;
     margin-top: 14px;
     line-height: 1.6em;
   }
-  .result-item-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .result-item-title {
-      font-weight: 600;
-      font-size: 14px;
-      margin-left: 8px;
-    }
+  .tools-item-title {
+    margin-top: 8px;
   }
-
-  .result-item-buttons {
+  .tools-item-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -61,7 +61,6 @@
         .result-content {
           display: grid;
           grid-template-columns: repeat(var(--num-columns, 4), 1fr);
-          // grid-template-columns: repeat(4, 1fr);
           grid-column-gap: 16px;
           grid-row-gap: 16px;
           animation: slideY 0.4s both;

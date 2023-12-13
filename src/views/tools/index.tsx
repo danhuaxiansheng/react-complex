@@ -1,6 +1,6 @@
 import Layout from "@/views/layout/index";
 import LeftSearch from "@/components/LeftSearch/index";
-import Card from "@/components/card/index";
+import ToolsCard from "@/components/toolsCard/index";
 import { useContext, useMemo } from "react";
 import { cardList, filterList } from "./hook";
 import { ConditionContext, ConditionProvider } from "@/reducers/toolsPage/conditionContext";
@@ -48,7 +48,7 @@ const PageMain = () => {
             </div>
           </div>
           <div className="result-content">
-            {filteredCardList.map((item) => (<Card key={item.title} {...item} />))}
+            {filteredCardList.map((item) => (<ToolsCard key={item.title} {...item} />))}
           </div>
         </div>
       </div>
